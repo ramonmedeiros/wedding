@@ -10,7 +10,7 @@ const Schedule = () => {
           <div className="text-center mb-16">
             <h1 className="text-wedding-darkgray mb-3 fade-in">Wedding Day Schedule</h1>
             <p className="text-wedding-gray text-lg max-w-lg mx-auto fade-in-delay-1">
-              September 15, 2025 • San Francisco, CA
+              February, 27, 2026 • Campinas, São Paulo, Brasil
             </p>
           </div>
           
@@ -69,7 +69,7 @@ const Schedule = () => {
                 Golden Gate Park Conservatory
               </p>
               <p className="text-wedding-gray mb-2">
-                100 John F Kennedy Dr, San Francisco, CA 94118
+                Address TBD, Campinas, São Paulo, Brasil
               </p>
               <p className="text-wedding-gray text-sm mt-4">
                 Parking is available on-site. Shuttle service will be available from select hotels.
