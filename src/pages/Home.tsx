@@ -27,7 +27,7 @@ const Home = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h1 className="text-wedding-darkgray mb-2 fade-in">Kübra & Ramon </h1>
-            <p className="text-wedding-gray text-lg italic fade-in-delay-1">February, 27, 2026 • San Francisco, CA</p>
+            <p className="text-wedding-gray text-lg italic fade-in-delay-1">February, 27, 2026 • Campinas, São Paulo, Brasil</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center fade-in-delay-2">
