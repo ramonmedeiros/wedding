@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <p className="text-wedding-gray text-sm">
-              Sarah & John's Wedding
+              Kübra & Ramon 's Wedding
             </p>
             <p className="text-wedding-gray text-xs mt-1">
               © {currentYear} All rights reserved
