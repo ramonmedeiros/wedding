@@ -61,6 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Wedding colors
+				wedding: {
+					white: '#FFFFFF',
+					offwhite: '#F5F5F7',
+					darkgray: '#1D1D1F',
+					gray: '#86868B',
+					blush: '#F7CAC9',
 				}
 			},
 			borderRadius: {
