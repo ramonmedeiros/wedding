@@ -1,6 +1,7 @@
 
 import Layout from "@/components/layout/Layout";
 import PhotoSlider from "@/components/home/PhotoSlider";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   // Sample photos - in a real app, these would come from your assets or a CMS
@@ -60,12 +61,8 @@ const Home = () => {
           <p className="mb-8">
             We're excited to celebrate our wedding with you. Please RSVP by August 15, 2025.
           </p>
-          <a 
-            href="/rsvp" 
-            className="inline-block px-8 py-3 bg-wedding-darkgray text-white rounded-md hover:bg-black transition-colors duration-300"
-          >
-            RSVP Now
-          </a>
+
+          <Link to="/rsvp" className="inline-block px-8 py-3 bg-wedding-darkgray text-white rounded-md hover:bg-black transition-colors duration-300">RSVP Now</Link>
         </div>
       </section>
     </Layout>
