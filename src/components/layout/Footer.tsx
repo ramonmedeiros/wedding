@@ -2,8 +2,8 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-const Footer = () => {  
-  const {t} = useTranslation();
+const Footer = () => {
+  const { t } = useTranslation();
 
   return (
     <footer className="py-12 bg-wedding-offwhite">
@@ -14,16 +14,16 @@ const Footer = () => {
               {t("our_wedding")}
             </p>
           </div>
-          
+
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
             <Link to="/" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
-              Home
+              {t("home")}
             </Link>
             <Link to="/rsvp" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
-              RSVP
+              {t("rsvp")}
             </Link>
             <Link to="/schedule" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
-              Schedule
+              {t("schedule")}
             </Link>
           </div>
         </div>
