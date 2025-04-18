@@ -13,14 +13,6 @@ const Home = () => {
       url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
       alt: "Couple at sunset"
     },
-    {
-      url: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
-      alt: "Engagement photo in nature"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
-      alt: "Wedding venue"
-    },
   ];
 
   return (
