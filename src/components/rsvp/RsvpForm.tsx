@@ -151,7 +151,7 @@ const RsvpForm = () => {
               id="comments"
               name="comments"
               className="mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
-              placeholder={t("comment_placeholder")}
+              placeholder={family?.comments ? family?.comments : t("comment_placeholder")}
               rows={3}
             />
           </div>
