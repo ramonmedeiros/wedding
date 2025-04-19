@@ -22,8 +22,9 @@ const Home = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h1 className="text-wedding-darkgray mb-2 fade-in">Kübra & Ramon</h1>
-            <p className="text-wedding-gray text-lg italic fade-in-delay-1">{t("date")} • {t("location")}</p>
+            <h1 className="text-wedding-darkgray mb-2 fade-in text-8xl">Kübra & Ramon</h1>
+            <p className="text-wedding-gray text-lg italic fade-in-delay-1 pt-2">{t("date")}</p>
+            <p className="text-wedding-gray text-lg italic fade-in-delay-1 pt-2">{t("location")}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center fade-in-delay-2">
