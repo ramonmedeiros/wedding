@@ -1,26 +1,29 @@
 
 import Layout from "@/components/layout/Layout";
 import RsvpForm from "@/components/rsvp/RsvpForm";
+import { useTranslation } from "react-i18next";
 
 const RSVP = () => {
+
+  const { t } = useTranslation()
   return (
     <Layout>
       <div className="container mx-auto py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-wedding-darkgray mb-3 fade-in">RSVP</h1>
+            <h1 className="text-wedding-darkgray mb-3 fade-in">{t("rsvp")}</h1>
             <p className="text-wedding-gray text-lg max-w-lg mx-auto fade-in-delay-1">
-              We would be delighted to have you join us on our special day. Please let us know if you can make it.
+              {t("we_would_like_have_you")}
             </p>
           </div>
-          
+
           <div className="fade-in-delay-2">
             <RsvpForm />
           </div>
-          
+
           <div className="mt-16 text-center fade-in-delay-3">
             <p className="text-wedding-gray text-sm">
-              If you have any questions, please contact us at <a href="mailto:sarahandjohn@example.com" className="text-wedding-darkgray hover:underline">sarahandjohn@example.com</a>
+              If you have any questions, please contact us.
             </p>
           </div>
         </div>

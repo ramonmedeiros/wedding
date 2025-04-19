@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
+import { useTranslation } from "react-i18next";
 
 const RsvpForm = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,8 @@ const RsvpForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const {t} = useTranslation()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -47,7 +50,7 @@ const RsvpForm = () => {
   if (isSubmitted) {
     return (
       <div className="text-center py-16">
-        <h3 className="text-2xl font-light text-wedding-darkgray">Thank You!</h3>
+        <h3 className="text-2xl font-light text-wedding-darkgray">{t("thank_you")}</h3>
         <p className="mt-4 max-w-md mx-auto text-wedding-gray">
           We've received your RSVP and are looking forward to celebrating with you.
         </p>
