@@ -8,5 +8,14 @@
     "rsvp": "RSVP",
     "schedule": "Schedule",
     "we_would_like_have_you": "We would be delighted to have you join us on our special day. Please let us know if you can make it.",
-    "thank_you": "Thank You!"
+    "thank_you": "Thank You!",
+    "full_name": "Full Name",
+    "email": "Email Address",
+    "are_you_coming": "Will you be attending?",
+    "rsvp_submitted": "We've received your RSVP and are looking forward to celebrating with you.",
+    "yes_will_be_there": "Yes, I'll be there",
+    "no_will_not_be_there": "Sorry, I can't make it",
+    "code": "Code",
+    "comment_placeholder": "If you have any problems, please leave a message here",
+    "comments": "Comments"
 }
