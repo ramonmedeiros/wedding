@@ -1,16 +1,5 @@
 {
-    "routes": [
-        {
-            "src": "/rsvp",
-            "dest": "/rsvp"
-        },
-        {
-            "src": "/schedule",
-            "dest": "/schedule"
-        },
-        {
-            "src": "/",
-            "dest": "/"
-        }
+    "rewrites":  [
+      {"source": "/(.*)", "destination": "/"}
     ]
-}
+  }
