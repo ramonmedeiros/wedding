@@ -51,8 +51,6 @@ const RsvpForm = () => {
       })
   };
 
-
-
   if (isSubmitted) {
     return (
       <div className="text-center py-16">
