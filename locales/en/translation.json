@@ -15,7 +15,7 @@
     "rsvp_submitted": "We've received your RSVP and are looking forward to celebrating with you.",
     "yes_will_be_there": "Yes, I'll be there",
     "no_will_not_be_there": "Sorry, I can't make it",
-    "code": "Code",
+    "ask_for_code": "To RSVP, please ask the code for us",
     "comment_placeholder": "If you have any problems, please leave a message here",
     "comments": "Comments",
     "guest_list": "Guest List",
@@ -23,5 +23,6 @@
     "submitting": "Submitting...",
     "submit_rsvp": "Submit RSVP",
     "im_coming": "I'm coming",
-    "im_not_coming": "I'm not coming"
+    "im_not_coming": "I'm not coming",
+    "questions_contact":"If you have any questions, please contact us."
 }
