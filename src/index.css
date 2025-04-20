@@ -80,6 +80,9 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: "DM Serif Display", serif;
+    font-weight: 100;
+    font-style: normal;
   }
 
   h1, h2, h3, h4, h5, h6 {
