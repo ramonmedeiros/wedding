@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslation } from "react-i18next";
 import Family, { getFamily, updateFamily } from "@/hooks/family";
@@ -29,7 +28,14 @@ const RsvpForm = () => {
       confirmation = true
     }
 
-    updateFamily(codeSubmited, confirmation, comments.toString()).
+    const confirmedGuestList = family.expected_guests.map(expectedGuest => {
+      const guestComming = formData.get(expectedGuest)
+      if (guestComming === "on") {
+        return expectedGuest
+      }
+    })
+
+    updateFamily(codeSubmited, confirmedGuestList, confirmation, comments.toString()).
       finally(() => {
         setIsSubmitting(false)
         setIsSubmitted(true)
@@ -66,7 +72,7 @@ const RsvpForm = () => {
   return (
     <>
       <form onSubmit={codeSubmit}>
-        <div className="mx-auto text-center">
+        <div className="text-center">
           <Label htmlFor="name" className="mx-auto text-center">
             {t("code")}
           </Label>
@@ -75,18 +81,17 @@ const RsvpForm = () => {
             id="code"
             name="code"
             required
-            className="w-1/5 mx-auto mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
+            className="w-10/5 mx-auto mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
           />
           <Button
             type="submit"
             disabled={codeSubmited !== ""}
             className="mt-2 bg-wedding-darkgray hover:bg-black text-white py-3 rounded-md transition-colors duration-300"
           >
-            {t("Submit")}
+            {t("submit")}
           </Button>
         </div>
       </form>
-
 
       <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto" hidden={family === undefined}>
         <div className="space-y-4">
@@ -107,43 +112,27 @@ const RsvpForm = () => {
             hidden={family?.expected_guests?.length === 0}
             className="pt-3 block"
           >
-            Guest List
+            {t("guest_list")}
           </Label>
 
-          {family?.expected_guests?.map((guest) => (
-            <Input
-              readOnly
-              key={guest}
-              placeholder={guest}
-              required
-              className="w-60 mx-auto mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
-            />
+          {family?.expected_guests?.map((guest, index) => (
+            <div key={`div-${guest}-${index}`} className="ml-5 flex spLace-x-2">
+              <Input
+                key={`input-${guest}-${index}`}
+                type="checkbox"
+                defaultChecked={true}
+                name={guest}
+                id={guest}
+                className="w-4 h-4 bg-gray-200 border-black-600"
+              />
+              <Label
+                key={`label-${guest}-${index}`}
+                htmlFor="guest"
+                className="pl-2 text-wedding-darkgray">{guest}</Label>
+            </div>
           ))}
 
-          <div>
-            <Label className="pb-1 text-wedding-darkgray pt-3 block mb-2">
-              {t("are_you_coming")}
-            </Label>
-            <RadioGroup
-              className="flex space-x-6"
-              name="confirmation"
-            >
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="yes" id="attending-yes" />
-                <Label htmlFor="attending-yes" className="text-wedding-gray cursor-pointer">
-                  {t("yes_will_be_there")}
-                </Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="no" id="attending-no" />
-                <Label htmlFor="attending-no" className="text-wedding-gray cursor-pointer">
-                  {t("no_will_not_be_there")}
-                </Label>
-              </div>
-            </RadioGroup>
-          </div>
-
-          <div className="pt-2">
+          <div className="pt-3">
             <Label htmlFor="Comments" className="text-wedding-darkgray">
               {t("comments")}
             </Label>
@@ -158,13 +147,27 @@ const RsvpForm = () => {
         </div>
 
         {family?.confirmed_at == undefined &&
-          <Button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-wedding-darkgray hover:bg-black text-white py-3 rounded-md transition-colors duration-300"
-          >
-            {isSubmitting ? "Submitting..." : "Submit RSVP"}
-          </Button>
+          <div>
+            <Label className="pb-1 text-wedding-darkgray block mb-2">
+              {t("are_you_coming")}
+            </Label>
+            <div className="flex space-x-4">
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+              >
+                {isSubmitting ? t("submitting") : t("im_coming")}
+              </Button>
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+              >
+                {isSubmitting ? t("submitting") : t("im_not_coming")}
+              </Button>
+            </div>
+          </div>
         }
       </form>
     </>

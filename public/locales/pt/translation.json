@@ -9,13 +9,18 @@
     "schedule": "Cronograma",
     "we_would_like_have_you": "Nós adorariamos ter você no nosso dia especial. Por favor, confirme sua presença.",
     "thank_you": "Obrigado!",
+    "family_name": "Família",
     "full_name": "Nome completo",
     "email": "Email",
-    "are_you_coming": "Will you be attending?",
-    "rsvp_submitted": "We've received your RSVP and are looking forward to celebrating with you.",
-    "yes_will_be_there": "Yes, I'll be there",
-    "no_will_not_be_there": "Sorry, I can't make it",
+    "are_you_coming": "Confirma sua presença?",
+    "rsvp_submitted": "Recebemos sua confirmação e esperando celebrar com você logo mais.",
     "code": "Código",
     "comment_placeholder": "Se você tiver algum problema, deixa uma mensagem aqui.",
-    "comments": "Comentários"
+    "comments": "Comentários",
+    "guest_list": "Lista de Convidados",
+    "submit": "Enviar",
+    "submitting": "Enviando...",
+    "submit_rsvp": "Envie confirmação",
+    "im_coming": "Presença confirmada",
+    "im_not_coming": "NÃO estou indo"
 }

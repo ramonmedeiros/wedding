@@ -8,13 +8,13 @@ export const getFamily = (code: string): Promise<Family> => {
             console.error(e)
             return Promise.reject(new Error(
                 e?.
-                map((e:Error) => e.message).
-                join('\n') ?? 'unknown',
+                    map((e: Error) => e.message).
+                    join('\n') ?? 'unknown',
             ))
         })
 }
 
-export const updateFamily = (code: string, confirmation: boolean, comments: string) => {
+export const updateFamily = (code: string, confirmed_guests: string[], confirmation: boolean, comments: string) => {
     const url = new URL(BACKEND_URL + "family/" + code);
 
     url.searchParams.append("confirmation", confirmation.toString());
@@ -22,13 +22,20 @@ export const updateFamily = (code: string, confirmation: boolean, comments: stri
 
     return fetch(url.toString(), {
         method: "POST",
+        body: JSON.stringify(
+            {
+                confirmed_guests: confirmed_guests,
+                confirmation: confirmation,
+                comments: comments,
+            }
+        ),
     }).
         catch(e => {
             console.error(e)
             return Promise.reject(new Error(
                 e?.
-                map((e: Error) => e.message).
-                join('\n') ?? 'unknown',
+                    map((e: Error) => e.message).
+                    join('\n') ?? 'unknown',
             ))
         })
 }
@@ -36,6 +43,7 @@ export const updateFamily = (code: string, confirmation: boolean, comments: stri
 interface Family {
     name: string
     expected_guests: string[]
+    confirmed_guests?: string[]
     comments: string
     confirmed: boolean
     confirmed_at?: Date

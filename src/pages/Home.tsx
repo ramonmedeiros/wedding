@@ -1,7 +1,6 @@
 
 import Layout from "@/components/layout/Layout";
 import PhotoSlider from "@/components/home/PhotoSlider";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {
@@ -58,7 +57,7 @@ const Home = () => {
             We're excited to celebrate our wedding with you. Please RSVP by August 15, 2025.
           </p>
 
-          <Link to="/rsvp" className="inline-block px-8 py-3 bg-wedding-darkgray text-white rounded-md hover:bg-black transition-colors duration-300">{t("rsvp_now")}</Link>
+          <a href="/rsvp" className="inline-block px-8 py-3 bg-wedding-darkgray text-white rounded-md hover:bg-black transition-colors duration-300">{t("rsvp_now")}</a>
         </div>
       </section>
     </Layout>

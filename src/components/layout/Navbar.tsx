@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,9 +24,9 @@ const Navbar = () => {
         }`}
     >
       <div className="flex items-center">
-        <Link to="/" className="ml-10 text-wedding-darkgray text-lg md:text-xl font-light">
+        <a href="/" className="ml-10 text-wedding-darkgray text-lg md:text-xl font-light">
           Kübra & Ramon
-        </Link>
+        </a>
 
         <div className="flex items-center space-x-8 mx-auto text-shadow-lg/80">
           <NavLink to="/" current={location.pathname === "/"}>
@@ -46,15 +46,15 @@ const Navbar = () => {
 
 const NavLink = ({ to, children, current }: { to: string; children: React.ReactNode; current: boolean }) => {
   return (
-    <Link
-      to={to}
+    <a
+      href={to}
       className={`text-sm font-thin transition-all duration-200 relative ${current
         ? "text-wedding-darkgray after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-wedding-darkgray"
         : "text-wedding-darkgray"
         }`}
     >
       {children}
-    </Link>
+    </a>
   );
 };
 
