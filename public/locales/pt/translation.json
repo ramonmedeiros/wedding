@@ -14,7 +14,7 @@
     "email": "Email",
     "are_you_coming": "Confirma sua presença?",
     "rsvp_submitted": "Recebemos sua confirmação e esperando celebrar com você logo mais.",
-    "code": "Código",
+    "ask_for_code": "Para confirmar sua presença, peça o código para nós.",
     "comment_placeholder": "Se você tiver algum problema, deixa uma mensagem aqui.",
     "comments": "Comentários",
     "guest_list": "Lista de Convidados",
@@ -22,5 +22,6 @@
     "submitting": "Enviando...",
     "submit_rsvp": "Envie confirmação",
     "im_coming": "Presença confirmada",
-    "im_not_coming": "NÃO estou indo"
+    "im_not_coming": "NÃO estou indo",
+    "questions_contact": "Em caso de dúvidas, nos contate."
 }

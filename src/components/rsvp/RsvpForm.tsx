@@ -6,14 +6,23 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslation } from "react-i18next";
 import Family, { getFamily, updateFamily } from "@/hooks/family";
+import { useSearchParams } from "react-router-dom";
 
 const RsvpForm = () => {
+  const { t } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [codeSubmited, setCodeSubmited] = useState<string>("");
   const [family, setFamily] = useState<Family>(undefined);
+  const [searchParams] = useSearchParams();
+  const code = searchParams.get("code")
 
-  const { t } = useTranslation()
+  if (code !== "" && family === undefined) {
+    getFamily(code).
+      then(family => {
+        setFamily(family)
+      }).
+      finally(() => setIsSubmitting(false))
+  }
 
   const handleSubmit = (e) => {
     setIsSubmitting(true);
@@ -35,28 +44,14 @@ const RsvpForm = () => {
       }
     })
 
-    updateFamily(codeSubmited, confirmedGuestList, confirmation, comments.toString()).
+    updateFamily(code, confirmedGuestList, confirmation, comments.toString()).
       finally(() => {
         setIsSubmitting(false)
         setIsSubmitted(true)
       })
   };
 
-  async function codeSubmit(e) {
-    setIsSubmitting(true);
-    e.preventDefault();
 
-    const formData = new FormData(e.target);
-    const code = formData.get("code")
-
-    getFamily(code.toString()).
-      then(family => {
-
-        setCodeSubmited(code.toString())
-        setFamily(family)
-      }).
-      finally(() => setIsSubmitting(false))
-  };
 
   if (isSubmitted) {
     return (
@@ -71,28 +66,6 @@ const RsvpForm = () => {
 
   return (
     <>
-      <form onSubmit={codeSubmit}>
-        <div className="text-center">
-          <Label htmlFor="name" className="mx-auto text-center">
-            {t("code")}
-          </Label>
-          <Input
-            readOnly={codeSubmited !== ""}
-            id="code"
-            name="code"
-            required
-            className="w-10/5 mx-auto mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
-          />
-          <Button
-            type="submit"
-            disabled={codeSubmited !== ""}
-            className="mt-2 bg-wedding-darkgray hover:bg-black text-white py-3 rounded-md transition-colors duration-300"
-          >
-            {t("submit")}
-          </Button>
-        </div>
-      </form>
-
       <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto" hidden={family === undefined}>
         <div className="space-y-4">
           <div>
@@ -170,6 +143,15 @@ const RsvpForm = () => {
           </div>
         }
       </form>
+      <div className="text-center">
+        <Label htmlFor="name" className="mx-auto text-center fs-10" hidden={family !== undefined}>
+          {t("ask_for_code")}
+        </Label>
+
+        <p className="pt-3 text-wedding-gray text-sm" hidden={family === undefined}>
+          {t("questions_contact")}
+        </p>
+      </div>
     </>
   );
 };

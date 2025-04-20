@@ -4,7 +4,6 @@ import RsvpForm from "@/components/rsvp/RsvpForm";
 import { useTranslation } from "react-i18next";
 
 const RSVP = () => {
-
   const { t } = useTranslation()
   return (
     <Layout>
@@ -19,12 +18,6 @@ const RSVP = () => {
 
           <div className="fade-in-delay-2">
             <RsvpForm />
-          </div>
-
-          <div className="mt-5 text-center fade-in-delay-3">
-            <p className="text-wedding-gray text-sm">
-              If you have any questions, please contact us.
-            </p>
           </div>
         </div>
       </div>
