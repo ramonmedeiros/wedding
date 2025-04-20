@@ -17,5 +17,11 @@
     "no_will_not_be_there": "Sorry, I can't make it",
     "code": "Code",
     "comment_placeholder": "If you have any problems, please leave a message here",
-    "comments": "Comments"
+    "comments": "Comments",
+    "guest_list": "Guest List",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "submit_rsvp": "Submit RSVP",
+    "im_coming": "I'm coming",
+    "im_not_coming": "I'm not coming"
 }
