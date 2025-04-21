@@ -90,7 +90,8 @@ const RsvpForm = () => {
               <Input
                 key={`input-${guest}-${index}`}
                 type="checkbox"
-                defaultChecked={true}
+                readOnly={family?.confirmed_at !== undefined}
+                defaultChecked={family?.confirmed_guests?.includes(guest) ? true : false}
                 name={guest}
                 id={guest}
                 className="w-4 h-4 bg-gray-200 border-black-600"
