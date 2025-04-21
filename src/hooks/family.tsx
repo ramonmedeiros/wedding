@@ -17,9 +17,6 @@ export const getFamily = (code: string): Promise<Family> => {
 export const updateFamily = (code: string, confirmed_guests: string[], confirmation: boolean, comments: string) => {
     const url = new URL(BACKEND_URL + "family/" + code);
 
-    url.searchParams.append("confirmation", confirmation.toString());
-    url.searchParams.append("comments", comments);
-
     return fetch(url.toString(), {
         method: "POST",
         body: JSON.stringify(

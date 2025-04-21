@@ -30,12 +30,11 @@ const RsvpForm = () => {
 
     const formData = new FormData(e.target);
     const comments = formData.get("comments")
-    const confirmationString = formData.get("confirmation")
 
     let confirmation = false
-    if (confirmationString === "yes") {
+    if (e.nativeEvent?.submitter?.id === "yes"){
       confirmation = true
-    }
+    } 
 
     const confirmedGuestList = family.expected_guests.map(expectedGuest => {
       const guestComming = formData.get(expectedGuest)
@@ -124,6 +123,7 @@ const RsvpForm = () => {
             </Label>
             <div className="flex space-x-4">
               <Button
+                id="yes"
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
@@ -131,6 +131,7 @@ const RsvpForm = () => {
                 {isSubmitting ? t("submitting") : t("im_coming")}
               </Button>
               <Button
+                id="no"
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
