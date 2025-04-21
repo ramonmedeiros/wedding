@@ -35,9 +35,9 @@ const Navbar = () => {
           <NavLink to="/rsvp" current={location.pathname === "/rsvp"}>
             {t("rsvp")}
           </NavLink>
-          <NavLink to="/schedule" current={location.pathname === "/schedule"}>
+          {/*<NavLink  to="/schedule" current={location.pathname === "/schedule"}>
             {t("schedule")}
-          </NavLink>
+          </NavLink>*/}
         </div>
       </div>
     </nav>

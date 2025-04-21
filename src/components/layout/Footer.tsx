@@ -21,7 +21,7 @@ const Footer = () => {
             <a href="/rsvp" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
               {t("rsvp")}
             </a>
-            <a href="/schedule" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
+            <a hidden={true} href="/schedule" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
               {t("schedule")}
             </a>
           </div>
