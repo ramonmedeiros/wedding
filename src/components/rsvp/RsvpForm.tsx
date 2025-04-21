@@ -16,7 +16,7 @@ const RsvpForm = () => {
   const [searchParams] = useSearchParams();
   const code = searchParams.get("code")
 
-  if (code !== "" && family === undefined) {
+  if (code !== null && family === undefined) {
     getFamily(code).
       then(family => {
         setFamily(family)
@@ -32,9 +32,9 @@ const RsvpForm = () => {
     const comments = formData.get("comments")
 
     let confirmation = false
-    if (e.nativeEvent?.submitter?.id === "yes"){
+    if (e.nativeEvent?.submitter?.id === "yes") {
       confirmation = true
-    } 
+    }
 
     const confirmedGuestList = family.expected_guests.map(expectedGuest => {
       const guestComming = formData.get(expectedGuest)
@@ -66,7 +66,7 @@ const RsvpForm = () => {
       <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto" hidden={family === undefined}>
         <div className="space-y-4">
           <div>
-            <Label htmlFor="name" className="text-wedding-darkgray">
+            <Label htmlFor="name" className="text-wedding-darkgray text-lg max-w-lg mx-auto">
               {t("family_name")}
             </Label>
             <Input
@@ -80,7 +80,7 @@ const RsvpForm = () => {
 
           <Label htmlFor="name"
             hidden={family?.expected_guests?.length === 0}
-            className="pt-3 block"
+            className="pt-3 block text-wedding-darkgray text-lg max-w-lg mx-auto"
           >
             {t("guest_list")}
           </Label>
@@ -103,22 +103,22 @@ const RsvpForm = () => {
           ))}
 
           <div className="pt-3">
-            <Label htmlFor="Comments" className="text-wedding-darkgray">
+            <Label htmlFor="Comments" className="text-wedding-darkgray text-lg max-w-lg mx-auto">
               {t("comments")}
             </Label>
             <Textarea
               id="comments"
               name="comments"
               className="mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
-              placeholder={family?.comments ? family?.comments : t("comment_placeholder")}
+              placeholder={family?.comments ? family?.comments : (family?.confirmed_at ? "" : t("comment_placeholder"))}
               rows={3}
             />
           </div>
         </div>
 
-        {family?.confirmed_at == undefined &&
+        {family?.confirmed_at === undefined ?
           <div>
-            <Label className="pb-1 text-wedding-darkgray block mb-2">
+            <Label className="pb-1 text-wedding-darkgray text-lg max-w-lg mx-auto block mb-2">
               {t("are_you_coming")}
             </Label>
             <div className="flex space-x-4">
@@ -140,6 +140,10 @@ const RsvpForm = () => {
               </Button>
             </div>
           </div>
+          : <Label className="pb-1 text-wedding-darkgray block mb-2 text-lg">
+            {family?.confirmed ? t("is_coming") : t("not_coming")}
+            {family.confirmed_at ? new Date(family.confirmed_at).toDateString(): ""}
+          </Label>
         }
       </form>
       <div className="text-center">

@@ -22,7 +22,7 @@ export const updateFamily = (code: string, confirmed_guests: string[], confirmat
         body: JSON.stringify(
             {
                 confirmed_guests: confirmed_guests,
-                confirmation: confirmation,
+                confirmed: confirmation,
                 comments: comments,
             }
         ),
