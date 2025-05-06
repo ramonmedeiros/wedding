@@ -24,7 +24,7 @@ const Navbar = () => {
         }`}
     >
       <div className="flex items-center">
-        <a href="/" className="ml-10 text-wedding-darkgray text-lg md:text-xl font-light">
+        <a href="/" className="ml-10 text-wedding-darkgray text-lg md:text-xl font-normal">
           Kübra & Ramon
         </a>
 
@@ -48,7 +48,7 @@ const NavLink = ({ to, children, current }: { to: string; children: React.ReactN
   return (
     <a
       href={to}
-      className={`text-base font-thin transition-all duration-200 relative ${current
+      className={`text-base font-normal transition-all duration-200 relative ${current
         ? "text-wedding-darkgray after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-wedding-darkgray"
         : "text-wedding-darkgray"
         }`}

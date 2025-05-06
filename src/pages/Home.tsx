@@ -18,7 +18,7 @@ const Home = () => {
       <section className="py-8 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h1 className="text-wedding-darkgray mb-2 fade-in text-6xl md:text-8xl lmt-10">Kübra & Ramon</h1>
+            <h1 className="text-wedding-darkgray mb-2 fade-in text-6xl md:text-8xl lmt-10 font-serif">Kübra & Ramon</h1>
             <p className="text-wedding-darkgray text-lg fade-in-delay-1 pt-2">{t("date")}</p>
             <p className="text-wedding-darkgray text-lg fade-in-delay-1 pt-2">{t("location")}</p>
           </div>
