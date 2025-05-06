@@ -1,7 +1,6 @@
 {
     "date": "27 February 2026",
     "location": "Campinas - São Paulo - Brazil",
-    "our_story": "Our Story",
     "rsvp_now": "RSVP Now",
     "our_wedding": "Kübra & Ramon's Wedding",
     "home": "Home",
@@ -15,8 +14,8 @@
     "rsvp_submitted": "We've received your RSVP and are looking forward to celebrating with you.",
     "yes_will_be_there": "Yes, I'll be there",
     "no_will_not_be_there": "Sorry, I can't make it",
-    "ask_for_code": "To RSVP, please ask the code for us",
-    "comment_placeholder": "If you have any problems, please leave a message here",
+    "ask_for_code": "To RSVP, please ask the code from us",
+    "comment_placeholder": "If you have any problems, or have aditional guests, please leave a message here",
     "comments": "Comments",
     "guest_list": "Guest List",
     "submit": "Submit",
@@ -26,5 +25,10 @@
     "im_not_coming": "I'm not coming",
     "questions_contact":"If you have any questions, please contact us.",
     "join_special_day": "Join Us for Our Special Day",
-    "please_rsvp": "We're excited to celebrate our wedding with you. Please RSVP by August 15, 2025."
+    "please_rsvp": "We're excited to celebrate our wedding with you. Please RSVP by August 15, 2025.",
+    "story_line_one": "We’re so happy you’re here. As you probably know by now… we’re getting married! After sharing so many memories, laughs, and late-night snacks together, we’re ready to take the next step and say “I do”, and we couldn’t imagine doing it without the love and support of our favorite people.",
+    "story_line_two": "This website is your go-to spot for all the details about our big day. You’ll find info about the ceremony and reception, travel and accommodations, the schedule, and a few other fun things along the way. We’ve created it with love (and a little bit of coffee), and we hope it helps make planning your trip as easy and exciting as possible.",
+    "story_line_three": "Thank you from the bottom of our hearts for being part of our lives. We can’t wait to celebrate, dance, and make new memories with you all.",
+    "is_coming" : "You confirmed your presence on: ", 
+    "not_coming": "You did NOT confirmed your presence on: "
 }
