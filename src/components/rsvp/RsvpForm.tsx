@@ -14,6 +14,7 @@ const RsvpForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [family, setFamily] = useState<Family>(undefined);
   const [searchParams] = useSearchParams();
+  const [confirmedGuests, setConfirmedGuests] = useState<string[]>([]);
   const code = searchParams.get("code")
 
   if (code !== null && family === undefined) {
@@ -65,18 +66,6 @@ const RsvpForm = () => {
     <>
       <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto" hidden={family === undefined}>
         <div className="space-y-4">
-          <div>
-            <Label htmlFor="name" className="text-wedding-darkgray text-lg max-w-lg mx-auto">
-              {t("family_name")}
-            </Label>
-            <Input
-              readOnly
-              id="name"
-              name="name"
-              placeholder={family?.name}
-              className="mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
-            />
-          </div>
 
           <Label htmlFor="name"
             hidden={family?.expected_guests?.length === 0}
@@ -95,11 +84,21 @@ const RsvpForm = () => {
                 name={guest}
                 id={guest}
                 className="w-4 h-4 bg-gray-200 border-black-600"
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setConfirmedGuests([ // with a new array
+                      ...confirmedGuests, // that contains all the old items
+                      e.target.id // and one new item at the end
+                    ])
+                    return
+                  }
+                  setConfirmedGuests(confirmedGuests.filter(guest => guest !== e.target.id))
+                }}
               />
               <Label
                 key={`label-${guest}-${index}`}
                 htmlFor="guest"
-                className="pl-2 text-wedding-darkgray">{guest}</Label>
+                className="pl-2 text-wedding-gray">{guest}</Label>
             </div>
           ))}
 
@@ -122,28 +121,31 @@ const RsvpForm = () => {
             <Label className="pb-1 text-wedding-darkgray text-lg max-w-lg mx-auto block mb-2">
               {t("are_you_coming")}
             </Label>
-            <div className="flex space-x-4">
-              <Button
-                id="yes"
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-              >
-                {isSubmitting ? t("submitting") : t("im_coming")}
-              </Button>
-              <Button
-                id="no"
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-              >
-                {isSubmitting ? t("submitting") : t("im_not_coming")}
-              </Button>
+            <div className="flex space-x-4 max-w-lg mx-auto text-center">
+
+              {confirmedGuests.length < 1 &&
+                <Button
+                  id="no"
+                  type="submit"
+                  className="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+                >
+                  {isSubmitting ? t("submitting") : t("im_not_coming")}
+                </Button>
+                ||
+                <Button
+                  id="yes"
+                  type="submit"
+                  className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+                >
+                  {isSubmitting ? t("submitting") : t("im_coming")}
+                </Button>
+              }
+
             </div>
           </div>
           : <Label className="pb-1 text-wedding-darkgray block mb-2 text-lg">
             {family?.confirmed ? t("is_coming") : t("not_coming")}
-            {family.confirmed_at ? new Date(family.confirmed_at).toDateString(): ""}
+            {family.confirmed_at ? new Date(family.confirmed_at).toDateString() : ""}
           </Label>
         }
       </form>
