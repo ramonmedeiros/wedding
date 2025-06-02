@@ -1,4 +1,4 @@
-const BACKEND_URL = "https://api.kubraandramon.com/"
+export const BACKEND_URL = "https://api.kubraandramon.com/"
 
 export const getFamily = (code: string): Promise<Family> => {
     return fetch(BACKEND_URL + "family/" + code).
@@ -14,7 +14,7 @@ export const getFamily = (code: string): Promise<Family> => {
         })
 }
 
-export const updateFamily = (code: string, confirmed_guests: string[], confirmation: boolean, comments: string) => {
+export const updateFamily = (code: string, confirmed_guests: string[], confirmation: boolean, comments: string, songs: string[], alergies: string[]) => {
     const url = new URL(BACKEND_URL + "family/" + code);
 
     return fetch(url.toString(), {
@@ -24,6 +24,8 @@ export const updateFamily = (code: string, confirmed_guests: string[], confirmat
                 confirmed_guests: confirmed_guests,
                 confirmed: confirmation,
                 comments: comments,
+                songs: songs,
+                alergies: alergies
             }
         ),
     }).
@@ -37,12 +39,18 @@ export const updateFamily = (code: string, confirmed_guests: string[], confirmat
         })
 }
 
-interface Family {
+export interface Alergy {
+    name: string
+    description: string
+}
+
+export interface Family {
     name: string
     expected_guests: string[]
     confirmed_guests?: string[]
     comments: string
     confirmed: boolean
+    songs: string[]
+    alergies: Alergy[]
     confirmed_at?: Date
 }
-export default Family

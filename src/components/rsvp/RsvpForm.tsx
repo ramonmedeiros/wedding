@@ -1,12 +1,11 @@
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import {  useState } from "react";
+import { Button, Input, Label, Textarea } from "@/components/ui";
 import { useTranslation } from "react-i18next";
-import Family, { getFamily, updateFamily } from "@/hooks/family";
+import { getFamily, updateFamily, Family } from "@/hooks/family";
 import { useSearchParams } from "react-router-dom";
+import { SongAutocomplete } from "./SongAutocomplete";
+import { getSongDescription, Song } from "@/hooks/songs";
 
 const RsvpForm = () => {
   const { t } = useTranslation()
@@ -16,6 +15,9 @@ const RsvpForm = () => {
   const [searchParams] = useSearchParams();
   const [confirmedGuests, setConfirmedGuests] = useState<string[]>([]);
   const code = searchParams.get("code")
+
+  let songs = [];
+  const setSongs = (s: Song[]) => songs = s
 
   if (code !== null && family === undefined) {
     getFamily(code).
@@ -44,7 +46,13 @@ const RsvpForm = () => {
       }
     })
 
-    updateFamily(code, confirmedGuestList, confirmation, comments.toString()).
+    updateFamily(
+      code,
+      confirmedGuestList,
+      confirmation,
+      comments.toString(),
+      songs.map((s: Song) => getSongDescription(s)),
+      []).
       finally(() => {
         setIsSubmitting(false)
         setIsSubmitted(true)
@@ -101,6 +109,8 @@ const RsvpForm = () => {
                 className="pl-2 text-wedding-gray">{guest}</Label>
             </div>
           ))}
+
+          <SongAutocomplete setSongs={setSongs} code={code} />
 
           <div className="pt-3">
             <Label htmlFor="Comments" className="text-wedding-darkgray text-lg max-w-lg mx-auto">
