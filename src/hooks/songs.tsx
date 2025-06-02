@@ -41,7 +41,6 @@ export interface Artist {
   name: string
 }
 
-
-export const getSongDescription = (s: Song): string =>{
+export const getSongDescription = (s: Song): string => {
   return `${s.name} - ${s.artists.map(artist => artist.name).join(', ')}`
 }

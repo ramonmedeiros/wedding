@@ -2,10 +2,11 @@
 import { useState } from "react";
 import { Button, Input, Label, Textarea } from "@/components/ui";
 import { useTranslation } from "react-i18next";
-import { getFamily, updateFamily, Family } from "@/hooks/family";
+import { getFamily, updateFamily, Family, Alergy } from "@/hooks/family";
 import { useSearchParams } from "react-router-dom";
 import { SongAutocomplete } from "./SongAutocomplete";
 import { getSongDescription, Song } from "@/hooks/songs";
+import { Alergies } from "./Alergies";
 
 const RsvpForm = () => {
   const { t } = useTranslation()
@@ -18,6 +19,9 @@ const RsvpForm = () => {
 
   let songs = [];
   const setSongs = (s: Song[]) => songs = s
+
+  let alergies = [] as Alergy[];
+  const setAlergies = (a: Alergy[]) => alergies = a
 
   if (code !== null && family === undefined) {
     getFamily(code).
@@ -52,7 +56,8 @@ const RsvpForm = () => {
       confirmation,
       comments.toString(),
       songs.map((s: Song) => getSongDescription(s)),
-      []).
+      alergies.filter(a => a.count > 0)
+    ).
       finally(() => {
         setIsSubmitting(false)
         setIsSubmitted(true)
@@ -109,6 +114,8 @@ const RsvpForm = () => {
                 className="pl-2 text-wedding-gray">{guest}</Label>
             </div>
           ))}
+
+          <Alergies setAlergies={setAlergies} />
 
           <SongAutocomplete setSongs={setSongs} code={code} />
 

@@ -14,7 +14,7 @@ export const getFamily = (code: string): Promise<Family> => {
         })
 }
 
-export const updateFamily = (code: string, confirmed_guests: string[], confirmation: boolean, comments: string, songs: string[], alergies: string[]) => {
+export const updateFamily = (code: string, confirmed_guests: string[], confirmation: boolean, comments: string, songs: string[], alergies: Alergy[]) => {
     const url = new URL(BACKEND_URL + "family/" + code);
 
     return fetch(url.toString(), {
@@ -40,8 +40,9 @@ export const updateFamily = (code: string, confirmed_guests: string[], confirmat
 }
 
 export interface Alergy {
+    id: string
     name: string
-    description: string
+    count: number
 }
 
 export interface Family {
