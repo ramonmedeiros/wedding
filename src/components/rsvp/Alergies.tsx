@@ -11,7 +11,6 @@ interface AlergiesProps {
 }
 
 export const Alergies = ({ setAlergies, totalGuests }: AlergiesProps) => {
-	debugger
 	const { t } = useTranslation()
 	const [allergies, setLocalAlergies] = useState<Alergy[]>([
 		{ id: 'lactose', name: t("lactose_intolerant"), count: 0 },
