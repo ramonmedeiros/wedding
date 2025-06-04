@@ -7,9 +7,11 @@ import { ChevronDownIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 
 interface AlergiesProps {
 	setAlergies: (alergies: Alergy[]) => void
+	totalGuests: number
 }
 
-export const Alergies = ({ setAlergies }: AlergiesProps) => {
+export const Alergies = ({ setAlergies, totalGuests }: AlergiesProps) => {
+	debugger
 	const { t } = useTranslation()
 	const [allergies, setLocalAlergies] = useState<Alergy[]>([
 		{ id: 'lactose', name: t("lactose_intolerant"), count: 0 },
@@ -22,16 +24,20 @@ export const Alergies = ({ setAlergies }: AlergiesProps) => {
 	]);
 
 	const [open, setOpen] = useState(false);
+	const [totalCount, setTotalCount] = useState(0)
 
 	const handleIncrement = (allergyId: string) => {
-		const updated = allergies.map(allergy => {
-			if (allergy.id === allergyId) {
-				return { ...allergy, count: allergy.count + 1 };
-			}
-			return allergy;
-		});
-		setLocalAlergies(updated)
-		setAlergies(updated)
+		if (totalCount < totalGuests) {
+			const updated = allergies.map(allergy => {
+				if (allergy.id === allergyId) {
+					return { ...allergy, count: allergy.count + 1 };
+				}
+				return allergy;
+			});
+			setTotalCount(totalCount + 1)
+			setLocalAlergies(updated)
+			setAlergies(updated)
+		}
 	};
 
 	const handleDecrement = (allergyId: string) => {
@@ -41,6 +47,7 @@ export const Alergies = ({ setAlergies }: AlergiesProps) => {
 			}
 			return allergy;
 		});
+		setTotalCount(Math.max(0, totalCount - 1))
 		setLocalAlergies(updated)
 		setAlergies(updated)
 	};

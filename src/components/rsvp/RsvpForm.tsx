@@ -115,7 +115,7 @@ const RsvpForm = () => {
             </div>
           ))}
 
-          <Alergies setAlergies={setAlergies} />
+          <Alergies setAlergies={setAlergies} totalGuests={family?.expected_guests.length} />
 
           <SongAutocomplete setSongs={setSongs} code={code} />
 
