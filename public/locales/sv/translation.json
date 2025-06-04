@@ -34,5 +34,13 @@
     "search_song": "Search song with artist, name",
     "add_more_songs": "Add more songs...",
     "clear_search": "Clear search",
-    "type_to_search_songs": "Type to see suggestions."
+    "type_to_search_songs": "Type to see suggestions.",
+    "alergies": "Alergies",
+    "lactose_intolerant": "🥤 Lactose Intolerance",
+    "vegetarian": "🥦 Vegetarian",
+    "vegan": "🌱 Vegan",
+    "pork": "🐖 Pork-Free",
+    "meat": "🥩 Meat-Free",
+    "nuts": "🥜 Nut Allergy",
+    "egg": "🥚 Egg Allergy"
 }
