@@ -30,6 +30,7 @@ export const useSongs = (term: string, code: string) => {
 }
 
 export interface Song {
+  id: string
   artists: Artist[]
   images: string[]
   endpoint: string

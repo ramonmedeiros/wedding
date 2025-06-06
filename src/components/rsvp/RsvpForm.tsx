@@ -55,7 +55,7 @@ const RsvpForm = () => {
       confirmedGuestList,
       confirmation,
       comments.toString(),
-      songs.map((s: Song) => getSongDescription(s)),
+      songs.map((s: Song) => s.id),
       alergies.filter(a => a.count > 0)
     ).
       finally(() => {
@@ -77,95 +77,96 @@ const RsvpForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto" hidden={family === undefined}>
-        <div className="space-y-4">
+      {family !== undefined &&
+        <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto">
+          <div className="space-y-4">
 
-          <Label htmlFor="name"
-            hidden={family?.expected_guests?.length === 0}
-            className="pt-3 block text-wedding-darkgray text-lg max-w-lg mx-auto"
-          >
-            {t("guest_list")}
-          </Label>
+            <Label htmlFor="name"
+              hidden={family?.expected_guests?.length === 0}
+              className="pt-3 block text-wedding-darkgray text-lg max-w-lg mx-auto"
+            >
+              {t("guest_list")}
+            </Label>
 
-          {family?.expected_guests?.map((guest, index) => (
-            <div key={`div-${guest}-${index}`} className="ml-5 flex spLace-x-2">
-              <Input
-                key={`input-${guest}-${index}`}
-                type="checkbox"
-                readOnly={family?.confirmed_at !== undefined}
-                defaultChecked={family?.confirmed_guests?.includes(guest) ? true : false}
-                name={guest}
-                id={guest}
-                className="w-4 h-4 bg-gray-200 border-black-600"
-                onChange={(e) => {
-                  if (e.target.checked) {
-                    setConfirmedGuests([ // with a new array
-                      ...confirmedGuests, // that contains all the old items
-                      e.target.id // and one new item at the end
-                    ])
-                    return
-                  }
-                  setConfirmedGuests(confirmedGuests.filter(guest => guest !== e.target.id))
-                }}
+            {family?.expected_guests?.map((guest, index) => (
+              <div key={`div-${guest}-${index}`} className="ml-5 flex spLace-x-2">
+                <Input
+                  key={`input-${guest}-${index}`}
+                  type="checkbox"
+                  readOnly={family?.confirmed_at !== undefined}
+                  defaultChecked={family?.confirmed_guests?.includes(guest) ? true : false}
+                  name={guest}
+                  id={guest}
+                  className="w-4 h-4 bg-gray-200 border-black-600"
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setConfirmedGuests([ // with a new array
+                        ...confirmedGuests, // that contains all the old items
+                        e.target.id // and one new item at the end
+                      ])
+                      return
+                    }
+                    setConfirmedGuests(confirmedGuests.filter(guest => guest !== e.target.id))
+                  }}
+                />
+                <Label
+                  key={`label-${guest}-${index}`}
+                  htmlFor="guest"
+                  className="pl-2 text-wedding-gray">{guest}</Label>
+              </div>
+            ))}
+
+            <Alergies alergies={family?.alergies} setAlergies={setAlergies} totalGuests={family?.expected_guests.length} />
+
+            <SongAutocomplete setSongs={setSongs} code={code} />
+
+            <div className="pt-3">
+              <Label htmlFor="Comments" className="text-wedding-darkgray text-lg max-w-lg mx-auto">
+                {t("comments")}
+              </Label>
+              <Textarea
+                id="comments"
+                name="comments"
+                className="mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
+                placeholder={family?.comments ? family?.comments : (family?.confirmed_at ? "" : t("comment_placeholder"))}
+                rows={3}
               />
-              <Label
-                key={`label-${guest}-${index}`}
-                htmlFor="guest"
-                className="pl-2 text-wedding-gray">{guest}</Label>
-            </div>
-          ))}
-
-          <Alergies setAlergies={setAlergies} totalGuests={family?.expected_guests.length} />
-
-          <SongAutocomplete setSongs={setSongs} code={code} />
-
-          <div className="pt-3">
-            <Label htmlFor="Comments" className="text-wedding-darkgray text-lg max-w-lg mx-auto">
-              {t("comments")}
-            </Label>
-            <Textarea
-              id="comments"
-              name="comments"
-              className="mt-1 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
-              placeholder={family?.comments ? family?.comments : (family?.confirmed_at ? "" : t("comment_placeholder"))}
-              rows={3}
-            />
-          </div>
-        </div>
-
-        {family?.confirmed_at === undefined ?
-          <div>
-            <Label className="pb-1 text-wedding-darkgray text-lg max-w-lg mx-auto block mb-2">
-              {t("are_you_coming")}
-            </Label>
-            <div className="flex space-x-4 max-w-lg mx-auto text-center">
-
-              {confirmedGuests.length < 1 &&
-                <Button
-                  id="no"
-                  type="submit"
-                  className="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-                >
-                  {isSubmitting ? t("submitting") : t("im_not_coming")}
-                </Button>
-                ||
-                <Button
-                  id="yes"
-                  type="submit"
-                  className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
-                >
-                  {isSubmitting ? t("submitting") : t("im_coming")}
-                </Button>
-              }
-
             </div>
           </div>
-          : <Label className="pb-1 text-wedding-darkgray block mb-2 text-lg">
-            {family?.confirmed ? t("is_coming") : t("not_coming")}
-            {family.confirmed_at ? new Date(family.confirmed_at).toDateString() : ""}
-          </Label>
-        }
-      </form>
+
+          {family?.confirmed_at === undefined ?
+            <div>
+              <Label className="pb-1 text-wedding-darkgray text-lg max-w-lg mx-auto block mb-2">
+                {t("are_you_coming")}
+              </Label>
+              <div className="flex space-x-4 max-w-lg mx-auto text-center">
+
+                {confirmedGuests.length < 1 &&
+                  <Button
+                    id="no"
+                    type="submit"
+                    className="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+                  >
+                    {isSubmitting ? t("submitting") : t("im_not_coming")}
+                  </Button>
+                  ||
+                  <Button
+                    id="yes"
+                    type="submit"
+                    className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300"
+                  >
+                    {isSubmitting ? t("submitting") : t("im_coming")}
+                  </Button>
+                }
+
+              </div>
+            </div>
+            : <Label className="pb-1 text-wedding-darkgray block mb-2 text-lg">
+              {family?.confirmed ? t("is_coming") : t("not_coming")}
+              {family.confirmed_at ? new Date(family.confirmed_at).toDateString() : ""}
+            </Label>
+          }
+        </form>}
       <div className="text-center">
         <Label htmlFor="name" className="mx-auto text-center fs-10" hidden={family !== undefined}>
           {t("ask_for_code")}

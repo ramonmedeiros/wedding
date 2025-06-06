@@ -6,23 +6,25 @@ import { Collapsible } from "radix-ui";
 import { ChevronDownIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 
 interface AlergiesProps {
+	alergies: Alergy[]
 	setAlergies: (alergies: Alergy[]) => void
 	totalGuests: number
 }
 
-export const Alergies = ({ setAlergies, totalGuests }: AlergiesProps) => {
-	const { t } = useTranslation()
-	const [allergies, setLocalAlergies] = useState<Alergy[]>([
-		{ id: 'lactose', name: t("lactose_intolerant"), count: 0 },
-		{ id: 'vegetarian', name: t("vegetarian"), count: 0 },
-		{ id: 'vegan', name: t("vegan"), count: 0 },
-		{ id: 'porkFree', name: t("pork"), count: 0 },
-		{ id: 'meatFree', name: t("meat"), count: 0 },
-		{ id: 'nutAllergy', name: t("nuts"), count: 0 },
-		{ id: 'eggAllergy', name: t("egg"), count: 0 },
-	]);
+const emptyList = [
+	{ id: 'lactose', count: 0, name: "" },
+	{ id: 'vegetarian', count: 0, name: "" },
+	{ id: 'vegan', count: 0, name: "" },
+	{ id: 'porkFree', count: 0, name: "" },
+	{ id: 'meatFree', count: 0, name: "" },
+	{ id: 'nutAllergy', count: 0, name: "" },
+	{ id: 'eggAllergy', count: 0, name: "" },
+]
 
-	const [open, setOpen] = useState(false);
+export const Alergies = ({ alergies, setAlergies, totalGuests }: AlergiesProps) => {
+	const { t } = useTranslation()
+	const [allergies, setLocalAlergies] = useState<Alergy[]>(AddTranslation(alergies ? alergies : emptyList));
+	const [open, setOpen] = useState(alergies ? true : false);
 	const [totalCount, setTotalCount] = useState(0)
 
 	const handleIncrement = (allergyId: string) => {
@@ -101,4 +103,29 @@ function AllergyCounterItem({ allergyName, count, onIncrement, onDecrement }) {
 			</div>
 		</div>
 	);
+}
+
+const AddTranslation = (alergies: Alergy[]): Alergy[] => {
+	const { t } = useTranslation()
+
+	return alergies.map(allergy => {
+		switch (allergy.id) {
+			case 'lactose':
+				return { id: 'lactose', name: t("lactose_intolerant"), count: allergy.count }
+			case 'vegetarian':
+				return { id: 'vegetarian', name: t("vegetarian"), count: allergy.count }
+			case 'vegan':
+				return { id: 'vegan', name: t("vegan"), count: allergy.count }
+			case 'porkFree':
+				return { id: 'porkFree', name: t("pork"), count: allergy.count }
+			case 'meatFree':
+				return { id: 'meatFree', name: t("meat"), count: allergy.count }
+			case 'nutAllergy':
+				return { id: 'nutAllergy', name: t("nuts"), count: allergy.count }
+			case 'eggAllergy':
+				return { id: 'eggAllergy', name: t("egg"), count: allergy.count }
+			default:
+				return allergy
+		}
+	})
 }
