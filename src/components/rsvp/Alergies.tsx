@@ -13,6 +13,7 @@ interface AlergiesProps {
 
 const emptyList = [
 	{ id: 'lactose', count: 0, name: "" },
+	{ id: 'milk-protein', count: 0, name: "" },
 	{ id: 'vegetarian', count: 0, name: "" },
 	{ id: 'vegan', count: 0, name: "" },
 	{ id: 'porkFree', count: 0, name: "" },
@@ -111,19 +112,21 @@ const AddTranslation = (alergies: Alergy[]): Alergy[] => {
 	return alergies.map(allergy => {
 		switch (allergy.id) {
 			case 'lactose':
-				return { id: 'lactose', name: t("lactose_intolerant"), count: allergy.count }
+				return { id: allergy.id, name: t("lactose_intolerant"), count: allergy.count }
+			case 'milk-protein':
+				return { id: allergy.id, name: t("milk_protein"), count: allergy.count }
 			case 'vegetarian':
-				return { id: 'vegetarian', name: t("vegetarian"), count: allergy.count }
+				return { id: allergy.id, name: t("vegetarian"), count: allergy.count }
 			case 'vegan':
-				return { id: 'vegan', name: t("vegan"), count: allergy.count }
+				return { id: allergy.id, name: t("vegan"), count: allergy.count }
 			case 'porkFree':
-				return { id: 'porkFree', name: t("pork"), count: allergy.count }
+				return { id: allergy.id, name: t("pork"), count: allergy.count }
 			case 'meatFree':
-				return { id: 'meatFree', name: t("meat"), count: allergy.count }
+				return { id: allergy.id, name: t("meat"), count: allergy.count }
 			case 'nutAllergy':
-				return { id: 'nutAllergy', name: t("nuts"), count: allergy.count }
+				return { id: allergy.id, name: t("nuts"), count: allergy.count }
 			case 'eggAllergy':
-				return { id: 'eggAllergy', name: t("egg"), count: allergy.count }
+				return { id: allergy.id, name: t("egg"), count: allergy.count }
 			default:
 				return allergy
 		}
