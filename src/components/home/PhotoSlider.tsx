@@ -65,7 +65,7 @@ const PhotoSlider = () => {
   };
 
   return (
-    <div className="relative w-full h-[300px] md:h-full overflow-hidden bg-wedding-offwhite">
+    <div className="relative w-full h-[300px] md:h-full overflow-hidden bg-wedding-offwhite rounded-lg">
       {photos.map((photo, index) => (
         <div
           key={index}

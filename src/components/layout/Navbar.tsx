@@ -24,7 +24,7 @@ const Navbar = () => {
         }`}
     >
       <div className="flex items-center">
-        <a href="/" className="ml-10 text-wedding-darkgray text-lg md:text-xl font-normal">
+        <a href="/" className="hidden md:inline-block md:ml-10 text-wedding-darkgray md:text-xl font-normal">
           Kübra & Ramon
         </a>
 
@@ -34,6 +34,9 @@ const Navbar = () => {
           </NavLink>
           <NavLink to="/rsvp" current={location.pathname === "/rsvp"}>
             {t("rsvp")}
+          </NavLink>
+          <NavLink  to="/faq" current={location.pathname === "/faq"}>
+            {t("faq")}
           </NavLink>
           {/*<NavLink  to="/schedule" current={location.pathname === "/schedule"}>
             {t("schedule")}

@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import RSVP from "./pages/RSVP";
 import Schedule from "./pages/Schedule";
 import NotFound from "./pages/NotFound";
-
+import FAQ from "./pages/FAQ";
 
 const App = () => (
   <TooltipProvider>
@@ -15,6 +15,7 @@ const App = () => (
         <Route path="/" element={<Home />} />
         <Route path="/rsvp" element={<RSVP />} />
         <Route path="/schedule" element={<Schedule />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
