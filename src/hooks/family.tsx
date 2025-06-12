@@ -46,7 +46,6 @@ export interface Alergy {
 }
 
 export interface Family {
-    name: string
     expected_guests: string[]
     confirmed_guests?: string[]
     comments: string

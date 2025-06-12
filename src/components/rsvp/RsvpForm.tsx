@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { getFamily, updateFamily, Family, Alergy } from "@/hooks/family";
 import { useSearchParams } from "react-router-dom";
 import { SongAutocomplete } from "./SongAutocomplete";
-import { getSongDescription, Song } from "@/hooks/songs";
+import { Song } from "@/hooks/songs";
 import { Alergies } from "./Alergies";
 
 const RsvpForm = () => {
