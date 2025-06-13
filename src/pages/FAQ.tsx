@@ -65,7 +65,7 @@ const FAQ = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto py-16 px-4">
+      <div className="container mx-auto py-16 md:px-80 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-wedding-darkgray mb-3 fade-in">{t("faq")}</h1>
