@@ -7,13 +7,14 @@ import { useSearchParams } from "react-router-dom";
 import { SongAutocomplete } from "./SongAutocomplete";
 import { Song } from "@/hooks/songs";
 import { Alergies } from "./Alergies";
+import CodeInput from "./CodeInput";
 
 const RsvpForm = () => {
   const { t } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [family, setFamily] = useState<Family>(undefined);
-  const [searchParams] = useSearchParams();
+  const [searchParams,setSearchParams] = useSearchParams();
   const [confirmedGuests, setConfirmedGuests] = useState<string[]>([]);
   const code = searchParams.get("code")
 
@@ -27,6 +28,10 @@ const RsvpForm = () => {
     getFamily(code).
       then(family => {
         setFamily(family)
+      }).
+      catch(e => {
+        searchParams.delete("code")
+        setSearchParams(searchParams)
       }).
       finally(() => setIsSubmitting(false))
   }
@@ -77,6 +82,7 @@ const RsvpForm = () => {
 
   return (
     <>
+      {code === null && <CodeInput />}
       {family !== undefined &&
         <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto">
           <div className="space-y-4">
