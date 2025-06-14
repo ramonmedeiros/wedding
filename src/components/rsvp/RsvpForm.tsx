@@ -83,7 +83,7 @@ const RsvpForm = () => {
   return (
     <>
       {code === null && <CodeInput />}
-      {family !== undefined &&
+      {family !== undefined && code !== null &&
         <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto">
           <div className="space-y-4">
 
