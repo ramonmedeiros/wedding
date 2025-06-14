@@ -8,12 +8,21 @@ const CodeInput = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const codeInput = useRef<HTMLInputElement>();
 
-  const handleSubmit = (e) => {
+  const handleEnter = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      searchParams.set("code", codeInput.current.value)
-      setSearchParams(searchParams)
+      setCode(codeInput.current.value)
     }
+  }
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      setCode(codeInput.current.value)
+  }
+
+  const setCode = (code: string) => {
+    searchParams.set("code", code)
+    setSearchParams(searchParams)
   }
 
   return (
@@ -25,7 +34,7 @@ const CodeInput = () => {
         <Input
           ref={codeInput}
           required
-          onKeyUpCapture={handleSubmit}
+          onKeyUpCapture={handleEnter}
           className="w-40 border-wedding-gray/20 focus:border-wedding-blush focus:ring-wedding-blush"
         />
         <Button
