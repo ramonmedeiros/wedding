@@ -51,7 +51,7 @@ export const Alergies = ({ alergies, setAlergies, totalGuests }: AlergiesProps) 
 
 	return (
 		<Collapsible.Root open={open} onOpenChange={setOpen}>
-			<Label className="pt-3 text-wedding-darkgray text-lg">
+			<Label className="pt-3 text-wedding-darkgray text-base">
 				{t("alergies")}
 			</Label>
 			<Collapsible.Trigger>
@@ -94,7 +94,7 @@ function AllergyCounterItem({ allergyName, count, onIncrement, onDecrement }) {
 				<button
 					type="button"
 					onClick={onIncrement}
-					className="rounded-xl bg-green-500 text-white hover:bg-green-600 active:bg-green-700 text-lg w-7 h-7 sm:w-7 sm:h-7 flex items-center justify-center"
+					className="rounded-xl bg-green-500 text-white hover:bg-green-600 active:bg-green-700 text-base w-7 h-7 sm:w-7 sm:h-7 flex items-center justify-center"
 				>+</button>
 			</div>
 		</div>

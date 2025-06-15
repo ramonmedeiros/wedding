@@ -11,7 +11,7 @@ const RSVP = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-5">
             <h1 className="text-wedding-darkgray mb-3 fade-in">{t("rsvp")}</h1>
-            <p className="text-wedding-gray text-lg max-w-lg mx-auto fade-in-delay-1">
+            <p className="text-wedding-gray text-base max-w-lg mx-auto fade-in-delay-1">
               {t("we_would_like_have_you")}
             </p>
           </div>

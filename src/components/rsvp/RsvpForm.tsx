@@ -89,7 +89,7 @@ const RsvpForm = () => {
 
             <Label htmlFor="name"
               hidden={family?.expected_guests?.length === 0}
-              className="pt-3 block text-wedding-darkgray text-lg max-w-lg mx-auto"
+              className="pt-3 block text-wedding-darkgray text-base max-w-lg mx-auto"
             >
               {t("guest_list")}
             </Label>
@@ -127,7 +127,7 @@ const RsvpForm = () => {
             <SongAutocomplete setSongs={setSongs} code={code} />
 
             <div className="pt-3">
-              <Label htmlFor="Comments" className="text-wedding-darkgray text-lg max-w-lg mx-auto">
+              <Label htmlFor="Comments" className="text-wedding-darkgray text-base max-w-lg mx-auto">
                 {t("comments")}
               </Label>
               <Textarea
@@ -142,7 +142,7 @@ const RsvpForm = () => {
 
           {family?.confirmed_at === undefined ?
             <div>
-              <Label className="pb-1 text-wedding-darkgray text-lg max-w-lg mx-auto block mb-2">
+              <Label className="pb-1 text-wedding-darkgray text-base max-w-lg mx-auto block mb-2">
                 {t("are_you_coming")}
               </Label>
               <div className="flex space-x-4 max-w-lg mx-auto text-center">
@@ -167,7 +167,7 @@ const RsvpForm = () => {
 
               </div>
             </div>
-            : <Label className="pb-1 text-wedding-darkgray block mb-2 text-lg">
+            : <Label className="pb-1 text-wedding-darkgray block mb-2 text-base">
               {family?.confirmed ? t("is_coming") : t("not_coming")}
               {family.confirmed_at ? new Date(family.confirmed_at).toDateString() : ""}
             </Label>

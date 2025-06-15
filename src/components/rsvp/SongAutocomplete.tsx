@@ -55,7 +55,7 @@ export const SongAutocomplete = ({ code, setSongs }: SongAutocompleteProps) => {
 
   return (
     <div className="max-w-md mx-auto">
-      <Label className="text-wedding-darkgray font-medium text-lg max-w-lg">{t("song_title")}</Label>
+      <Label className="text-wedding-darkgray font-medium text-base max-w-lg">{t("song_title")}</Label>
       <div className="p-2 border border-gray-300 rounded-lg shadow-sm focus-within:ring-2 focus-within:ring-sky-500 focus-within:border-sky-500 transition-all">
         {selectedItems.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-2 items-center">
