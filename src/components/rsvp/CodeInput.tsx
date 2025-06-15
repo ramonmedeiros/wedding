@@ -30,7 +30,7 @@ const CodeInput = () => {
       <Label htmlFor="codeInput" className="mx-auto text-center block mb-2">
         {t("code")}
       </Label>
-      <div className="flex justify-center items-center space-x-1">
+      <div className="flex justify-center items-center space-x-4">
         <Input
           ref={codeInput}
           required

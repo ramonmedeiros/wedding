@@ -174,10 +174,6 @@ const RsvpForm = () => {
           }
         </form>}
       <div className="text-center">
-        <Label htmlFor="name" className="mx-auto text-center fs-10" hidden={family !== undefined}>
-          {t("ask_for_code")}
-        </Label>
-
         <p className="pt-3 text-wedding-gray text-sm" hidden={family === undefined}>
           {t("questions_contact")}
         </p>
