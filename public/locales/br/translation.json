@@ -40,5 +40,17 @@
     "nuts": "🥜 Alergia a castanhas/nozes",
     "egg": "🥚 Alergia a ovo",
     "faq": "FAQ",
-    "code": "Digite o código"
+    "code": "Digite o código",
+    "plus_one_question": "Posso levar um acompanhante?",
+    "plus_one_answer": "➕ Se o seu convite for \"e um convidado\", então sim! Se não, vamos manter a intimidade — mas ainda assim amamos você.",
+    "kids_question": "Crianças são bem-vindas?",
+    "kids_answer": "👶 Adoraríamos que vocês aproveitassem uma noite agitada sem crianças, com pista de dança lotada e bebidas à vontade!\nMas entendemos perfeitamente. Se vocês acham que não conseguem relaxar sem seus pequenos por perto, eles são mais do que bem-vindos para participar da comemoração.\nBasta nos avisar na sua confirmação de presença se eles virão para que possamos nos planejar adequadamente!",
+    "food_question": "O que tem no cardápio?",
+    "food_answer": "🍽️ Comida deliciosa e open bar te aguardam! Informe-nos sobre quaisquer restrições alimentares na sua confirmação de presença.",
+    "parking_question": "Tem estacionamento?",
+    "parking_answer": "🚗 Há estacionamento disponível no local. Compartilhamentos de carona também funcionam muito bem.",
+    "gifts_question": "E os presentes?",
+    "gifts_answer": "🎁 Não precisa de presente! Basta trazer a sua cara-metade! Mas se você é um daqueles convidados que insiste em nos mimar, uma pequena contribuição seria muito apreciada. É totalmente opcional, claro, mas significaria muito para nós! Para os nossos amigos brasileiros, o Pix funciona muito bem, e para os nossos convidados suecos, o Swish é perfeito.",
+    "faq_question": "O que devo fazer se ainda tiver dúvidas?",
+    "faq_answer": "❓ Mande uma mensagem para o Ramon ou para o Kübra. Estamos aqui para ajudar!"
 }

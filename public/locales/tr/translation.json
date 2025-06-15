@@ -1,7 +1,7 @@
 {
     "date": "27 Şubat 2026",
     "location": "Campinas - São Paulo - Brezilya",
-    "rsvp_now": "Katılımı şimdi onayla",
+    "rsvp_now": "Katılımı şimdi bildirin",
     "our_wedding": "Kübra & Ramon’un Düğünü ",
     "home": "Ana Sayfa",
     "rsvp": "Katılım",
@@ -27,8 +27,8 @@
     "story_line_one": "Burada olduğunuz için çok mutluyuz. Muhtemelen artık biliyorsunuzdur… biz evleniyoruz! Birlikte sayısız anı, kahkaha ve gece atıştırmalıkları paylaştıktan sonra, bir sonraki adıma geçip 'Evet' demeye hazırız ve bunu en sevdiğimiz insanların sevgisi ve desteği olmadan hayal bile edemiyoruz",
     "story_line_two": "Bu web sitesi, büyük günümüzle ilgili tüm detaylar için gideceğiniz adres. Tören ve resepsiyon hakkında bilgiler, seyahat ve konaklama seçenekleri, program ve yol boyunca keyifli birkaç ekstra içerik bulacaksınız. Onu sevgiyle (ve biraz kahveyle) hazırladık ve umarız seyahatinizi planlamanızı mümkün olduğunca kolay ve heyecanlı hale getirir.",
     "story_line_three": "Hayatımızın bir parçası olduğunuz için yürekten teşekkür ederiz. Sizinle birlikte kutlamayı, dans etmeyi ve yeni anılar biriktirmeyi sabırsızlıkla bekliyoruz.",
-    "is_coming": "You confirmed your presence on: ",
-    "not_coming": "You did NOT confirmed your presence on: ",
+    "is_coming": "Katılımınızı onayladınız: ",
+    "not_coming": "Katılımınızı onaylamadınız: ",
     "song_title": "Hangi şarkı seni dans pistine götürür?",
     "search_song": "Şarkıyı sanatçı ve isim ile ara",
     "add_more_songs": "Daha fazla şarkı ekle...",
@@ -44,5 +44,17 @@
     "nuts": "🥜 Kuruyemiş alerjisi",
     "egg": "🥚 Yumurta alerjisi",
     "faq": "SSS",
-    "code": "Kodu giriniz"
+    "code": "Kodu girin",
+    "plus_one_question": "Can I bring a plus-one?",
+    "plus_one_answer": "➕ If your invitation says “and Guest,” then yes! If not, we’re keeping it intimate—but we still love you.",
+    "kids_question": "Are kids welcome?",
+    "kids_answer": "👶 We’d love for you to enjoy a wild night out kid-free, dance floor full, drinks flowing!\nBut we totally get it. If you feel you can’t relax without your little ones nearby, they are more than welcome to join the celebration.\nJust let us know in your RSVP if they’ll be coming so we can plan accordingly!",
+    "food_question": "What’s on the menu?",
+    "food_answer": "🍽️ Delicious food and an open bar await! Let us know any dietary restrictions on your RSVP.",
+    "parking_question": "Is there parking?",
+    "parking_answer": "🚗 There’s parking available at the venue. Rideshares work great too.",
+    "gifts_question": "What about gifts?",
+    "gifts_answer": "🎁 No gift is necessary! Just bring your wonderful self! But if you're one of those guests who insists on spoiling us, a small contribution would be greatly appreciated. It's completely optional, of course, but it would mean the world to us! For our Brazilian friends, Pix works great, and for our Swedish guests, Swish is perfect.",
+    "faq_question": "What should I do if I still have questions?",
+    "faq_answer": "❓ Text Ramon or Kübra. We got you!"
 }

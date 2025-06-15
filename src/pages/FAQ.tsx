@@ -9,59 +9,58 @@ export interface FaqItemData {
   answer: string;
 }
 
-const faqItems: FaqItemData[] = [
-  /*
-  {
-    question: "When and where is the wedding?",
-    answer: "📍 Ceremony & reception details are [insert address and time here]. See our map for parking + transport tips."
-  },
-  {
-    question: "What should I wear?",
-    answer: "👗 Dress code: Garden Party Chic / Cocktail.\nThink: [brief mood—e.g. “dressy but dance-ready” or “chic but comfy”]."
-  },
-    */
-  {
-    question: "Can I bring a plus-one?",
-    answer: "➕ If your invitation says “and Guest,” then yes! If not, we’re keeping it intimate—but we still love you."
-  },
-  {
-    question: "Are kids welcome?",
-    answer: "👶 We’d love for you to enjoy a wild night out kid-free, dance floor full, drinks flowing!\nBut we totally get it. If you feel you can’t relax without your little ones nearby, they are more than welcome to join the celebration.\nJust let us know in your RSVP if they’ll be coming so we can plan accordingly!"
-  },
-  {
-    question: "What’s on the menu?",
-    answer: "🍽️ Delicious food and an open bar await! Let us know any dietary restrictions on your RSVP."
-  },
-  /*{
-    question: "Where should we stay?",
-    answer: "🏨 Yes! We’ve reserved a block of rooms at [Hotel Name] under “[Your Last Name] Wedding.” More options listed [here]."
-  },*/
-  {
-    question: "Is there parking?",
-    answer: "🚗 There’s parking available at the venue. Rideshares work great too."
-  },
-  /*{
-    question: "Will the event be indoors or outdoors?",
-    answer: "☀️ The event will be indoors, inside a cozy hall. Bring a light layer just in case!"
-  }*/,
-  {
-    question: "What about gifts?",
-    answer: "🎁 No gift is necessary! Just bring your wonderful self! But if you're one of those guests who insists on spoiling us, a small contribution would be greatly appreciated. It's completely optional, of course, but it would mean the world to us! For our Brazilian friends, Pix works great, and for our Swedish guests, Swish is perfect."
-  },
-  /*
-  {
-    question: "How do we get to and from the wedding venue?",
-    answer: "We will provide shuttle buses to and from the venue. For those driving their own cars, there will be plenty of parking available."
-  },
-  */
-  {
-    question: "What should I do if I still have questions?",
-    answer: "❓ Text Ramon or Kübra. We got you!"
-  }
-];
 
 const FAQ = () => {
   const { t } = useTranslation();
+
+  const faqItems: FaqItemData[] = [
+    /*
+    {
+      question: "When and where is the wedding?",
+      answer: "📍 Ceremony & reception details are [insert address and time here]. See our map for parking + transport tips."
+    },
+    {
+      question: "What should I wear?",
+      answer: "👗 Dress code: Garden Party Chic / Cocktail.\nThink: [brief mood—e.g. “dressy but dance-ready” or “chic but comfy”]."
+    },
+    {
+      question: "Where should we stay?",
+      answer: "🏨 Yes! We’ve reserved a block of rooms at [Hotel Name] under “[Your Last Name] Wedding.” More options listed [here]."
+    },
+    {
+      question: "Will the event be indoors or outdoors?",
+      answer: "☀️ The event will be indoors, inside a cozy hall. Bring a light layer just in case!"
+    },
+    {
+      question: "How do we get to and from the wedding venue?",
+      answer: "We will provide shuttle buses to and from the venue. For those driving their own cars, there will be plenty of parking available."
+    },
+    */
+    {
+      question: t("plus_one_question"),
+      answer: t("plus_one_answer")
+    },
+    {
+      question: t("kids_question"),
+      answer: t("kids_answer")
+    },
+    {
+      question: t("food_question"),
+      answer: t("food_answer")
+    },
+    {
+      question: t("parking_question"),
+      answer: t("parking_answer")
+    },
+    {
+      question: t("gifts_question"),
+      answer: t("gifts_answer")
+    },
+    {
+      question: t("faq_question"),
+      answer: t("faq_answer")
+    },
+  ];
 
   return (
     <Layout>
@@ -73,7 +72,7 @@ const FAQ = () => {
         </div>
 
         <Accordion.Root
-          type="multiple" // Allows multiple items to be open simultaneously
+          type="multiple"
           className="w-10% space-y-3"
         >
           {faqItems.map((item, index) => (
