@@ -16,11 +16,14 @@ i18n
     // init i18next
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
-        supportedLngs: ['pt', 'en', 'tr'],
+        supportedLngs: ['br', 'en', 'tr'],
         fallbackLng: "en", // use en if detected lng is not available
         keySeparator: false, // we do not use keys in form messages.welcome
         interpolation: {
             escapeValue: false // react already safes from xss
+        },
+        detection: {
+            order: ['subdomain', 'querystring', 'hash', 'cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag', 'path'],
         }
     });
 
