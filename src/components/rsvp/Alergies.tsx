@@ -26,20 +26,16 @@ export const Alergies = ({ alergies, setAlergies, totalGuests }: AlergiesProps) 
 	const { t } = useTranslation()
 	const [allergies, setLocalAlergies] = useState<Alergy[]>(AddTranslation(alergies ? alergies : emptyList));
 	const [open, setOpen] = useState(alergies ? true : false);
-	const [totalCount, setTotalCount] = useState(0)
 
 	const handleIncrement = (allergyId: string) => {
-		if (totalCount < totalGuests) {
-			const updated = allergies.map(allergy => {
-				if (allergy.id === allergyId) {
-					return { ...allergy, count: allergy.count + 1 };
-				}
-				return allergy;
-			});
-			setTotalCount(totalCount + 1)
-			setLocalAlergies(updated)
-			setAlergies(updated)
-		}
+		const updated = allergies.map(allergy => {
+			if (allergy.id === allergyId && allergy.count < totalGuests) {
+				return { ...allergy, count: allergy.count + 1 };
+			}
+			return allergy;
+		});
+		setLocalAlergies(updated)
+		setAlergies(updated)
 	};
 
 	const handleDecrement = (allergyId: string) => {
@@ -49,7 +45,6 @@ export const Alergies = ({ alergies, setAlergies, totalGuests }: AlergiesProps) 
 			}
 			return allergy;
 		});
-		setTotalCount(Math.max(0, totalCount - 1))
 		setLocalAlergies(updated)
 		setAlergies(updated)
 	};
