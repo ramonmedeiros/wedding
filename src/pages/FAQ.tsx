@@ -64,7 +64,7 @@ const FAQ = () => {
   return (
     <Layout>
       <Title title={t("faq")} />
-      <div className="container mx-auto md:px-80">
+      <div className="container mx-auto md:px-80 fade-in-delay-2">
         <Accordion.Root type="multiple" className="w-10% space-y-3">
           {faqItems.map((item, index) => (
             <Accordion.Item
