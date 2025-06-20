@@ -15,7 +15,7 @@ const Home = () => {
           className="w-full md:h-[80vh] h-[60vh] md:object-[57%_42%] object-[40%_41%] object-center md:object-center object-cover md:object-cover "
         />
       </div>
-      <section className="py-8 px-4 mb-10">
+      <section className="py-8 px-4">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h1 className="text-wedding-darkgray mb-2 fade-in text-6xl md:text-8xl mt-10 font-serif">Kübra & Ramon</h1>
