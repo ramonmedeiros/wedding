@@ -1,5 +1,5 @@
-
 import Layout from "@/components/layout/Layout";
+import Title from "@/components/layout/Title";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import { Accordion } from "radix-ui";
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,6 @@ export interface FaqItemData {
   question: string;
   answer: string;
 }
-
 
 const FAQ = () => {
   const { t } = useTranslation();
@@ -64,17 +63,9 @@ const FAQ = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto py-16 md:px-80 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-wedding-darkgray mb-3 fade-in">{t("faq")}</h1>
-          </div>
-        </div>
-
-        <Accordion.Root
-          type="multiple"
-          className="w-10% space-y-3"
-        >
+      <Title title={t("faq")} />
+      <div className="container mx-auto md:px-80">
+        <Accordion.Root type="multiple" className="w-10% space-y-3">
           {faqItems.map((item, index) => (
             <Accordion.Item
               key={index}

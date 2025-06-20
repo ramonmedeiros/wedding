@@ -1,85 +1,99 @@
-
 import Layout from "@/components/layout/Layout";
-import ScheduleItem from "@/components/schedule/ScheduleItem";
+import Title from "@/components/layout/Title";
+import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { ChevronDownIcon } from "lucide-react";
+import { Accordion } from "radix-ui";
+import { useTranslation } from "react-i18next";
 
-const Schedule = () => {
+export default function Schedule() {
+  const events = [
+    {
+      time: "14-18 February",
+      title: "Rio de Janeiro - Carnaval ",
+      image: "/images/christ-the-redeemer.svg",
+      description: "We're kicking off with an unforgetable adventure. Carnaval in Rio! Get ready for vibrant parades, samba in the streets, and elecdtric atmosphere you'll never forget. Whether you're a Carnaval pro or just curios to experince the magic, we'd love for you to join us.",
+      side: "left",
+    },
+    {
+      time: "4:00 PM",
+      title: "Guest Arrival",
+      description: "Guests are welcome to arrive and be seated in the garden.",
+      image: "/images/christ-the-redeemer.svg",
+      side: "right",
+    },
+    {
+      time: "4:00 PM",
+      title: "Guest Arrival",
+      description: "Guests are welcome to arrive and be seated in the garden.",
+      image: "/images/christ-the-redeemer.svg",
+      side: "left",
+    },
+  ]
+  const { t } = useTranslation();
+
   return (
     <Layout>
-      <div className="container mx-auto py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-wedding-darkgray mb-3 fade-in">Wedding Day Schedule</h1>
-            <p className="text-wedding-gray text-lg max-w-lg mx-auto fade-in-delay-1">
-              February, 27, 2026 • Campinas, São Paulo, Brasil
-            </p>
-          </div>
-          
-          <div className="mt-16 fade-in-delay-2">
-            <div className="mb-12">
-              <h2 className="text-2xl mb-6 font-light text-wedding-darkgray">Ceremony</h2>
-              <div className="space-y-6">
-                <ScheduleItem 
-                  time="4:00 PM" 
-                  title="Guest Arrival" 
-                  description="Guests are welcome to arrive and be seated in the garden." 
-                />
-                <ScheduleItem 
-                  time="4:30 PM" 
-                  title="Ceremony Begins" 
-                  description="The ceremony will take place in the rose garden." 
-                  highlight
-                />
-                <ScheduleItem 
-                  time="5:15 PM" 
-                  title="Cocktail Hour" 
-                  description="Enjoy drinks and hors d'oeuvres on the terrace." 
-                />
-              </div>
-            </div>
-            
-            <div className="mb-12">
-              <h2 className="text-2xl mb-6 font-light text-wedding-darkgray">Reception</h2>
-              <div className="space-y-6">
-                <ScheduleItem 
-                  time="6:30 PM" 
-                  title="Dinner" 
-                  description="A seated dinner will be served in the main hall." 
-                />
-                <ScheduleItem 
-                  time="8:00 PM" 
-                  title="First Dance" 
-                  highlight
-                />
-                <ScheduleItem 
-                  time="8:15 PM" 
-                  title="Dancing & Celebration" 
-                  description="Join us on the dance floor for a night of celebration." 
-                />
-                <ScheduleItem 
-                  time="11:00 PM" 
-                  title="Farewell" 
-                  description="Official end of the festivities." 
-                />
-              </div>
-            </div>
-            
-            <div className="mt-16 p-6 bg-wedding-offwhite rounded-lg text-center fade-in-delay-3">
-              <h3 className="text-xl mb-3 font-light text-wedding-darkgray">Venue Information</h3>
-              <p className="text-wedding-gray mb-2">
-                Golden Gate Park Conservatory
-              </p>
-              <p className="text-wedding-gray mb-2">
-                Address TBD, Campinas, São Paulo, Brasil
-              </p>
-              <p className="text-wedding-gray text-sm mt-4">
-                Parking is available on-site. Shuttle service will be available from select hotels.
-              </p>
-            </div>
+      <Title title={t("schedule")} description={t("schedule_description")} />
+      <TooltipProvider>
+        <div className="relative w-full max-w-4xl mx-auto">
+          {/* Central Vertical Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-black rounded-full" />
+
+          <div className="space-y-12">
+            {events.map((event, index) => {
+              const isLeft = event.side === "left" || (!event.side && index % 2 === 0);
+
+              return (
+                <div
+                  key={index}
+                  className={`relative flex items-center ${isLeft ? "justify-start" : "justify-end"}`}
+                >
+                  <div className={`w-1/2 px-4`}>
+                    {createDropDown(index, event)}
+                  </div>
+
+                  {/* Dot on the central line */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-2 h-2 bg-black rounded-full" />
+                </div>
+              );
+            })}
           </div>
         </div>
-      </div>
+      </TooltipProvider>
     </Layout>
   );
-};
+}
 
-export default Schedule;
+const createDropDown = (index, event) => {
+  const justifyContent = event.side === "right" ? "justify-items-start" : "justify-items-end";
+
+  return (
+    <Accordion.Root
+      type="multiple"
+      className="w-10% space-y-3"
+    >
+      <Accordion.Item
+        key={index}
+        value={index.toString()}
+        className="overflow-hidden rounded-md transition-all"
+      >
+        <Accordion.Header className="flex">
+          <Accordion.Trigger className="grid grid-cols-6 group flex w-full flex-1 cursor-pointer items-center justify-between pl-4 pt-4 pr-4 pb-2 text-left text-wedding-darkgray">
+            {event.side === "right" && <img className="col-span-1" src={event.image} />}
+            <div className={`bg-white rounded-2xl p-4 col-span-5 ${justifyContent}`}>
+              <h3 className="text-lg font-semibold col-span-3">{event.title}</h3>
+              <p className="text-sm text-gray-500">{event.time}</p>
+              <ChevronDownIcon className="col-span-1 h-5 w-5 transform text-wedding-darkgray transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180" />
+            </div>
+            {event.side === "left" && <img className="col-span-1" src={event.image} />}
+          </Accordion.Trigger>
+        </Accordion.Header>
+        <Accordion.Content className="overflow-hidden text-sm text-wedding-gray data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp">
+          <div className="px-4 pb-4">
+            <p className="text-sm text-gray-700">{event.description}</p>
+          </div>
+        </Accordion.Content>
+      </Accordion.Item>
+    </Accordion.Root>
+  )
+} 

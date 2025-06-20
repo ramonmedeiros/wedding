@@ -33,24 +33,25 @@ const Navbar = () => {
           <NavLink to="/" current={location.pathname === "/"}>
             {t("home")}
           </NavLink>
+         {/* <NavLink to="/schedule" current={location.pathname === "/schedule"}>
+            {t("schedule")}
+          </NavLink>*/}
           <NavLink to="/rsvp" current={location.pathname === "/rsvp"}>
             {t("rsvp")}
           </NavLink>
-          <NavLink  to="/faq" current={location.pathname === "/faq"}>
+          <NavLink to="/faq" current={location.pathname === "/faq"}>
             {t("faq")}
           </NavLink>
-          {/*<NavLink  to="/schedule" current={location.pathname === "/schedule"}>
-            {t("schedule")}
-          </NavLink>*/}
         </div>
       </div>
     </nav>
   );
 };
 
-const NavLink = ({ to, children, current }: { to: string; children: React.ReactNode; current: boolean }) => {
+const NavLink = ({ to, children, current, ...props }: { to: string; children: React.ReactNode; current: boolean }) => {
   return (
     <a
+      {...props}
       href={to}
       className={`text-base font-normal transition-all duration-200 relative ${current
         ? "text-wedding-darkgray after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-wedding-darkgray"
