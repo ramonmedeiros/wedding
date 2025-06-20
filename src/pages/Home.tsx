@@ -15,7 +15,7 @@ const Home = () => {
           className="w-full md:h-[80vh] h-[60vh] md:object-[57%_42%] object-[40%_41%] object-center md:object-center object-cover md:object-cover "
         />
       </div>
-      <section className="py-8 px-4">
+      <section className="py-8 px-4 mb-10">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h1 className="text-wedding-darkgray mb-2 fade-in text-6xl md:text-8xl mt-10 font-serif">Kübra & Ramon</h1>
@@ -31,16 +31,6 @@ const Home = () => {
             </div>
             <PhotoSlider />
           </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-wedding-offwhite">
-        <div className="container mx-auto text-center max-w-2xl">
-          <h2 className="text-2xl mb-8 font-light text-wedding-darkgray">{t("join_special_day")}</h2>
-          <p className="mb-8">
-            {t("please_rsvp")}
-          </p>
-          <a href="/rsvp" className="inline-block px-8 py-3 bg-wedding-darkgray text-white rounded-md hover:bg-black transition-colors duration-300">{t("rsvp_now")}</a>
         </div>
       </section>
     </Layout>

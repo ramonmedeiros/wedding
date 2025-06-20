@@ -7,7 +7,7 @@ const RSVP = () => {
   const { t } = useTranslation()
   return (
     <Layout>
-      <Title title={t("rsvp")} description={t("we_would_like_have_you")} />
+      <Title title={t("rsvp")} description={t("please_rsvp")} />
       <div className="container mx-auto max-w-4xl mx-auto fade-in-delay-2">
         <RsvpForm />
       </div>
