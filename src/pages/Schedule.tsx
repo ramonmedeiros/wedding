@@ -56,13 +56,13 @@ export default function Schedule() {
             <h1 className="group flex w-full flex-1 items-center justify-between p-4 text-left text-wedding-darkgray hover:bg-wedding-offwhite/50">
               <span className="text-base font-medium md:text-base">{item.title}</span>
             </h1>
-            <h3 className="px-4 pb-4 pt-2 overflow-hidden text-sm text-wedding-gray">
+            <h2 className="px-4 pb-4 pt-2 overflow-hidden text-wedding-gray text-sm">
               {item.description.split('\n').map((line, i) => (
                     <p key={i}>
                       {line}
                     </p>
                   ))}
-            </h3>
+            </h2>
           </div>
         ))}
       </div>
