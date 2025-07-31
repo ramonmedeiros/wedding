@@ -5,11 +5,11 @@ import { Accordion } from "radix-ui";
 import { useTranslation } from "react-i18next";
 
 const events = [
-    {
-      time: "15-20 February",
-      title: "Rio de Janeiro - Carnaval",
-      anchor: "rio",
-      description: `
+  {
+    time: "15-20 February",
+    title: "Rio de Janeiro - Carnaval",
+    anchor: "rio",
+    description: `
           To kick things off, Ramon and I are heading to Rio for Carnaval, and we’re turning it into a pre-wedding celebration! 🎭🥳
 
           Carnaval officially begins on Feb 14, but we’ll be arriving on the night of the 15th and staying until the 20th, based at Hotel ibis Copacabana Posto 2.
@@ -27,20 +27,20 @@ const events = [
           We seriously can’t wait to celebrate with you all and this is just the beginning! 💕
           Let’s make it unforgettable! 🌞💃🕺
           `
-    },
-    {
-      time: "21-24 February",
-      title: "Our family time",
-      anchor: "family-time",
-      description: "We will keep with our parents the week before"
-    },
-    {
-      time: "25 February",
-      title: "Pre-wedding",
-      anchor: "pre-wedding",
-      description: "Let's meet 2 days before the wedding, so we can meet each other and get the party started"
-    },
-  ];
+  },
+  {
+    time: "21-24 February",
+    title: "Our family time",
+    anchor: "family-time",
+    description: "We will keep with our parents the week before"
+  },
+  {
+    time: "25 February",
+    title: "Pre-wedding",
+    anchor: "pre-wedding",
+    description: "Let's meet 2 days before the wedding, so we can meet each other and get the party started"
+  },
+];
 
 export default function Schedule() {
   const { t } = useTranslation();
@@ -73,10 +73,8 @@ export default function Schedule() {
               className="overflow-hidden rounded-md border border-wedding-gray/30 bg-white shadow-sm transition-all focus-within:ring-2 focus-within:ring-wedding-darkgray/50"
             >
               <Accordion.Header className="flex">
-                <Accordion.Trigger className="group flex w-full flex-1 cursor-pointer items-center justify-between p-4 text-left text-wedding-darkgray hover:bg-wedding-offwhite/50">
-                  <span className="text-base font-medium md:text-base">
-                    {`${index + 1}. ${item.title}`}
-                  </span>
+                <Accordion.Trigger id={item.anchor} className="group flex w-full flex-1 cursor-pointer items-center justify-between p-4 text-left text-wedding-darkgray hover:bg-wedding-offwhite/50">
+                  <span className="text-base font-medium md:text-base">{item.title}</span>
                   <ChevronDownIcon className="h-5 w-5 transform text-wedding-darkgray transition-transform duration-300 ease-in-out group-data-[state=open]:rotate-180" />
                 </Accordion.Trigger>
               </Accordion.Header>
