@@ -12,7 +12,7 @@ export default function Schedule() {
       title: t("rio_title"),
       anchor: "rio",
       location: t("rio_location"),
-      description: t("rio_location"),
+      description: t("rio_description"),
     },
     {
       time: t("family_time"),
