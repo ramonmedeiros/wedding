@@ -60,7 +60,7 @@ export default function Schedule() {
             <span>
               <h3 className="text-xl font-semibold">{item.title}</h3>
             </span>
-            {item.location && <h4 className="pt-2 pb-2 font-semibold">Location to stay at: {item.location}</h4>}
+            {item.location && <h4 className="pt-2 pb-2 font-semibold">{t("location_stay")} {item.location}</h4>}
             <span className="wrap-anywhere whitespace-pre-wrap pb-4 pt-2 font-light text-wedding-darkgray text-sm">{item.description}</span>
           </div>
         ))}
