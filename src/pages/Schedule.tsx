@@ -1,31 +1,33 @@
 import Layout from "@/components/layout/Layout";
 import { useTranslation } from "react-i18next";
 
-const events = [
-  {
-    time: "15-20 February",
-    title: "Rio - Carnaval",
-    anchor: "rio",
-    location: "Copacabana & Ipanema (see map)",
-    description: "We’re kicking off our wedding vacation with one of the world’s most iconic celebrations—Carnival in Rio!\nJoin us for sun, samba, and unforgettable moments as we dive into the heart of Brazilian culture.\n\nCarnival officially begins on February 14, but we’ll be arriving the night of February 15 and staying until February 20, based in Copacabana at the Hotel ibis Copacabana Posto 2—right by the beach.\n\nWhile most of the biggest Carnival parties and blocos happen in Downtown Rio (Centro), getting there is easy—Uber is safe, reliable, and affordable, so you’ll be able to go back and forth without hassle.\n\nExpect beach days, bloco parties (street parades), flowing caipirinhas, and maybe even a night at the legendary Sambódromo.🌴🍹🌞\n\n✨ What to Expect:\nFeb 16–19 – Blocos, beach, street parties, and beautiful chaos\nFeb 19 – Group dinner to unwind and catch up\n\nCome for the dancing, stay for the memories. Whether you're down for the full Carnival experience or just want to enjoy the vibes by the beach, we can't wait to celebrate with you. 🌞💃🕺",
-  },
-  {
-    time: "21-25 February",
-    title: "Family time",
-    anchor: "family-time",
-    description: "After the high energy of Carnival, we’re setting aside some quiet time for our families to connect before the big day.\nSince many of our loved ones haven’t had the chance to meet yet, we’ll be spending a few days in Campinas with both sides of the family.\n\nThis time is especially important to us, and we’re so excited to see our families come together.\n\nWe’ll be off the grid (just a bit!) during this period, focusing on family time before the celebrations continue.\n That said, we’ll still be keeping an eye on the group chats and, if the opportunity arises, we might join you for a spontaneous hangout or two!"
-  },
-  {
-    time: "26 February",
-    title: "Pre-wedding",
-    anchor: "pre-wedding",
-    location: "Campinas - São Paulo (see map)",
-    description: "Details coming soon. Stay tuned"
-  },
-];
+
 
 export default function Schedule() {
   const { t } = useTranslation();
+
+  const events = [
+    {
+      time: t("rio_time"),
+      title: t("rio_title"),
+      anchor: "rio",
+      location: t("rio_location"),
+      description: t("rio_location"),
+    },
+    {
+      time: t("family_time"),
+      title: t("family_title"),
+      anchor: "family-time",
+      description: t("family_description"),
+    },
+    {
+      time: t("prewedding_time"),
+      title: t("prewedding_title"),
+      anchor: "pre-wedding",
+      location: t("prewedding_location"),
+      description: t("prewedding_description"),
+    }
+  ];
 
   return (
     <Layout>
