@@ -18,8 +18,8 @@ const Footer = () => {
             <a href="/" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
               {t("home")}
             </a>
-            <a hidden={true} href="/schedule" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
-              {t("schedule")}
+            <a href="/schedule" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
+              {t("schedule_navbar")}
             </a>
             <a href="/rsvp" className="text-wedding-gray text-sm hover:text-wedding-darkgray transition-colors">
               {t("rsvp")}

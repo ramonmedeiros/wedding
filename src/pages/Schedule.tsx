@@ -33,7 +33,7 @@ export default function Schedule() {
     <Layout>
       <div className="container mx-auto pt-20 pb-10 text-center">
         <h2 className="text-wedding-darkgray fade-in font-serif">{t("schedule")}</h2>
-        <p className="mt-5 whitespace-pre-wrap text-wedding-gray text-base max-w-4xl mx-auto fade-in-delay-1 pt-7">
+        <p className="mt-5 whitespace-pre-wrap text-wedding-gray text-base max-w-3xl mx-auto fade-in-delay-1 pt-7">
           {t("schedule_description")}
         </p>
       </div>
