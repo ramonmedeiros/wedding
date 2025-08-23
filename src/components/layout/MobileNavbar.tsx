@@ -1,17 +1,10 @@
-
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
-import { useLocation } from "react-router-dom";
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation();
-  const location = useLocation();
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <div className="md:hidden">
@@ -20,23 +13,32 @@ const MobileNavbar = () => {
       </button>
       {isOpen && (
         <div className="absolute top-16 left-0 w-full backdrop-blur-sm flex flex-col items-center space-y-4 py-4">
-          <NavLink to="/" current={location.pathname === "/"} onClick={() => setIsOpen(false)}>
-            {t("home")}
-          </NavLink>
-          <NavLink to="/schedule" current={location.pathname === "/schedule"} onClick={() => setIsOpen(false)}>
-            {t("schedule_navbar")}
-          </NavLink>
-          <NavLink to="/rsvp" current={location.pathname === "/rsvp"} onClick={() => setIsOpen(false)}>
-            {t("rsvp")}
-          </NavLink>
-          <NavLink to="/faq" current={location.pathname === "/faq"} onClick={() => setIsOpen(false)}>
-            {t("faq")}
-          </NavLink>
+          <Links setIsOpen={setIsOpen} />
         </div>
       )}
     </div>
   );
 };
+
+export const Links = (setIsOpen) => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <NavLink to="/" onClick={() => setIsOpen(false)}>
+        {t("home")}
+      </NavLink>
+      <NavLink to="/schedule" onClick={() => setIsOpen(false)}>
+        {t("schedule_navbar")}
+      </NavLink>
+      <NavLink to="/rsvp" onClick={() => setIsOpen(false)}>
+        {t("rsvp")}
+      </NavLink>
+      <NavLink to="/faq" onClick={() => setIsOpen(false)}>
+        {t("faq")}
+      </NavLink>
+    </>
+  )
+}
 
 export const NavLink = ({ to, children, current, onClick, ...props }: { to: string; children: React.ReactNode; current?: boolean, onClick?: () => void }) => {
   return (
