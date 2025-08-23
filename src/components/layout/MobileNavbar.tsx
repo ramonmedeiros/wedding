@@ -7,7 +7,7 @@ const MobileNavbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="md:hidden">
+    <div className="container md:hidden justify-left">
       <button onClick={toggleMenu} className="text-wedding-darkgray">
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
