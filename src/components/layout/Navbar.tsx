@@ -2,10 +2,13 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import { useIsMobile } from "../../hooks/use-mobile";
+import MobileNavbar, { NavLink } from "./MobileNavbar";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,38 +32,25 @@ const Navbar = () => {
             Kübra & Ramon
           </a>
         </div>
-        <div className="flex items-center space-x-8 text-shadow-lg/80">
-          <NavLink to="/" current={location.pathname === "/"}>
+        {isMobile ? <MobileNavbar /> : <div className="flex items-center space-x-8 text-shadow-lg/80">
+          <NavLink to="/">
             {t("home")}
           </NavLink>
-          <NavLink to="/schedule" current={location.pathname === "/schedule"}>
+          <NavLink to="/schedule">
             {t("schedule_navbar")}
           </NavLink>
-          <NavLink to="/rsvp" current={location.pathname === "/rsvp"}>
+          <NavLink to="/rsvp">
             {t("rsvp")}
           </NavLink>
-          <NavLink to="/faq" current={location.pathname === "/faq"}>
+          <NavLink to="/faq">
             {t("faq")}
           </NavLink>
-        </div>
+        </div>}
       </div>
     </nav>
   );
 };
 
-const NavLink = ({ to, children, current, ...props }: { to: string; children: React.ReactNode; current: boolean }) => {
-  return (
-    <a
-      {...props}
-      href={to}
-      className={`text-base font-normal transition-all duration-200 relative ${current
-        ? "text-wedding-darkgray after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-wedding-darkgray"
-        : "text-wedding-darkgray"
-        }`}
-    >
-      {children}
-    </a>
-  );
-};
+
 
 export default Navbar;
