@@ -12,7 +12,7 @@ const DressCode = () => {
         <img
           src={"/images/dresscode.png"}
           alt={"/images/dresscode.jpg"}
-          className="mx-auto md:h-[50vh] md:w-[110vh] h-[15vh] w-[60vh] object-center md:object-center object-cover md:object-cover"
+          className="mx-auto md:h-[50vh] md:w-[110vh] h-[20vh] w-[60vh] object-center md:object-center object-cover md:object-cover"
         />
         <p className="whitespace-pre-wrap text-wedding-gray text-base max-w-3xl mx-auto">
           {t("dresscode_description")}
