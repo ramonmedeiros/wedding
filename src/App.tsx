@@ -5,6 +5,7 @@ import RSVP from "./pages/RSVP";
 import Schedule from "./pages/Schedule";
 import NotFound from "./pages/NotFound";
 import FAQ from "./pages/FAQ";
+import DressCode from "./pages/DressCode";
 
 const App = () => (
   <TooltipProvider>
@@ -15,6 +16,7 @@ const App = () => (
         <Route path="/" element={<Home />} />
         <Route path="/rsvp" element={<RSVP />} />
         <Route path="/schedule" element={<Schedule />} />
+        <Route path="/dresscode" element={<DressCode />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -33,6 +33,9 @@ export const Links = (setIsOpen) => {
       <NavLink to="/rsvp" onClick={() => setIsOpen(false)}>
         {t("rsvp")}
       </NavLink>
+      <NavLink to="/dresscode" onClick={() => setIsOpen(false)}>
+        {t("dresscode")}
+      </NavLink>
       <NavLink to="/faq" onClick={() => setIsOpen(false)}>
         {t("faq")}
       </NavLink>
