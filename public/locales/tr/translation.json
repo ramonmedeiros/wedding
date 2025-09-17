@@ -13,6 +13,7 @@
     "email": "Email Address",
     "are_you_coming": "Katılacak mısınız?",
     "rsvp_submitted": "Katılım bilginiz elimize ulaştı. Sizinle birlikte bu anlamlı günü kutlamak için sabırsızlanıyoruz.",
+    "rsvp_negative_submitted": "Katılamayacağınız için üzgünüz, ancak bizi bilgilendirdiğiniz için teşekkür ederiz.",
     "yes_will_be_there": "Evet, orada olacağım",
     "no_will_not_be_there": "Üzgünüm, katılamayacağım",
     "comment_placeholder": "Ekstra sorularınız varsa veya bize güzel bir mesaj bırakmak isterseniz, lütfen bize bildirin",
