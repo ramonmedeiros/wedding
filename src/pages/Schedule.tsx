@@ -26,6 +26,7 @@ export default function Schedule() {
       anchor: "pre-wedding",
       location: t("prewedding_location"),
       description: t("prewedding_description"),
+      map: '<iframe src="https://www.google.com/maps/d/embed?mid=1g1tqB_X8AJj4nnkq0oIYDadT3zi79U8&ehbc=2E312F" width="640" height="480"></iframe>'
     }
   ];
 
@@ -61,6 +62,12 @@ export default function Schedule() {
               <h3 className="text-xl font-semibold">{item.title}</h3>
             </span>
             {item.location && <h4 className="pt-2 pb-2 font-semibold">{t("location_stay")} {item.location}</h4>}
+            {item.map && (
+              <div
+                className="pt-2 pb-4"
+                dangerouslySetInnerHTML={{ __html: item.map }}
+              />
+            )}
             <span className="wrap-anywhere whitespace-pre-wrap pb-4 pt-2 font-light text-wedding-darkgray text-sm">{item.description}</span>
           </div>
         ))}
