@@ -64,7 +64,7 @@ export default function Schedule() {
             {item.location && <h4 className="pt-2 pb-2 font-semibold">{t("location_stay")} {item.location}</h4>}
             {item.map && (
               <div
-                className="pt-2 pb-4"
+                className="relative h-0 overflow-hidden pt-[75%] [&>iframe]:absolute [&>iframe]:top-0 [&>iframe]:left-0 [&>iframe]:h-full [&>iframe]:w-full"
                 dangerouslySetInnerHTML={{ __html: item.map }}
               />
             )}
