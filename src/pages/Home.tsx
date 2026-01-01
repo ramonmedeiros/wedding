@@ -31,6 +31,18 @@ const Home = () => {
             </div>
             <PhotoSlider />
           </div>
+          <iframe
+            data-testid="embed-iframe"
+            className="md:col-start-2 mt-10 mx-auto"
+            style={{ borderRadius: "12px" }}
+            src="https://open.spotify.com/embed/playlist/3r69De7EiLiRNUqM2xeST1?utm_source=generator"
+            width="90%"
+            height="352"
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          />
         </div>
       </section>
     </Layout>
