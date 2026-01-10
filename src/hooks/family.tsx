@@ -46,6 +46,7 @@ export interface Alergy {
 }
 
 export interface Family {
+  qrcode: string
   expected_guests: string[]
   confirmed_guests?: string[]
   comments: string

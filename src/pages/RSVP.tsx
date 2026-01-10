@@ -8,6 +8,7 @@ import { SongAutocomplete } from "./../components/rsvp/SongAutocomplete";
 import { Song } from "@/hooks/songs";
 import { Alergies } from "./../components/rsvp/Alergies";
 import CodeInput from "./../components/rsvp/CodeInput";
+import { QRCodeSVG } from "qrcode.react";
 import Layout from "../components/layout/Layout";
 import Title from "../components/layout/Title";
 
@@ -87,6 +88,20 @@ const RsvpForm = () => {
         {family !== undefined && code !== null && isSubmitted === undefined &&
           <form onSubmit={handleSubmit} className="space-y-8 max-w-md mx-auto">
             <div className="space-y-4">
+
+              {family?.qrcode &&
+                <div className="flex flex-col items-center py-8">
+                  <h3 className="text-xl text-wedding-darkgray mb-4 font-light">{t("access_code")}</h3>
+                  <div className="p-6 bg-white rounded-xl shadow-sm border border-stone-100">
+                    <QRCodeSVG
+                      value={family.qrcode}
+                      size={200}
+                      level="H"
+                      className="mx-auto"
+                    />
+                  </div>
+                </div>
+              }
 
               <Label htmlFor="name"
                 hidden={family?.expected_guests?.length === 0}
