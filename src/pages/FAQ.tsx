@@ -13,32 +13,6 @@ const FAQ = () => {
   const { t } = useTranslation();
 
   const faqItems: FaqItemData[] = [
-    /*
-    {
-      question: "When and where is the wedding?",
-      answer: "📍 Ceremony & reception details are [insert address and time here]. See our map for parking + transport tips."
-    },
-    {
-      question: "What should I wear?",
-      answer: "👗 Dress code: Garden Party Chic / Cocktail.\nThink: [brief mood—e.g. “dressy but dance-ready” or “chic but comfy”]."
-    },
-    {
-      question: "Where should we stay?",
-      answer: "🏨 Yes! We’ve reserved a block of rooms at [Hotel Name] under “[Your Last Name] Wedding.” More options listed [here]."
-    },
-    {
-      question: "Will the event be indoors or outdoors?",
-      answer: "☀️ The event will be indoors, inside a cozy hall. Bring a light layer just in case!"
-    },
-    {
-      question: "How do we get to and from the wedding venue?",
-      answer: "We will provide shuttle buses to and from the venue. For those driving their own cars, there will be plenty of parking available."
-    },
-    */
-    {
-      question: t("plus_one_question"),
-      answer: t("plus_one_answer")
-    },
     {
       question: t("kids_question"),
       answer: t("kids_answer")

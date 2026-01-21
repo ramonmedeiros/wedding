@@ -48,8 +48,6 @@
     "egg": "🥚 Yumurta alerjisi",
     "faq": "SSS",
     "code": "Kodu girin",
-    "plus_one_question": "Yanımda bir misafir getirebilir miyim?",
-    "plus_one_answer": "➕ Eğer davetiyenizde “ve Misafir” ibaresi varsa, elbette getirebilirsiniz! Eğer yoksa, etkinliği samimi tutmak istiyoruz—ama sizi yine de çok seviyoruz.",
     "kids_question": "Çocuklar davetli mi?",
     "kids_answer": "👶 Çocuksuz, çılgın bir gece geçirmenizi, dans pistinde eğlenmenizi ve bol bol içki keyfi yapmanızı çok isteriz! Ama sizi de anlıyoruz—eğer minikleriniz yanınızda olmadan rahat edemeyeceğinizi düşünüyorsanız, elbette kutlamaya katılabilirler. Sadece RSVP’nizde onların da geleceğini belirtmeyi unutmayın ki biz de ona göre plan yapabilelim!",
     "food_question": "Menüde neler var?",
@@ -74,5 +72,5 @@
     "location_stay": "Kalınacak yer:",
     "dresscode": "Kıyafet Kodu",
     "dresscode_description": "Haydi Şıklanalım!\n\nDüğünümüzde smart formal kıyafet kuralı olacak. Yani zarif ve özenli bir görünüm: kokteyl tarzından daha şık, fakat smokin kadar katı değil. En iyi takımlarınızı, abiyelerinizi, kokteyl elbiselerinizi, şık ayakkabılarınızı ve biraz da ışıltınızı getirin. ✨\n\nKutlama çoğunlukla kapalı alanda, biraz da açık alanda gerçekleşecek. Şubat ayı Brezilya’da sıcak geçer, bu yüzden hafif ve nefes alabilen kumaşları tercih edin.\n\nRenk konusunda özgürsünüz! Tüm renklere izin var, siyah da dahil (sonuçta bu biraz da bekârlık hayatımızın cenazesi sayılır 😄).\n\nKüçük bir ricamız var: lütfen beyaz ve bej tonlarından kaçının. Bu renkleri sevmediğimizden değil, ama gelin bu tonlarda parlayan tek kişi olmak istiyor. Onun parıltılı anıyla rekabet etmeyelim, olur mu?\n\nEkstra rahatlık için, partiye sandalet ya da terlik getirmeyi unutmayın! 💃🕺\n\nSizinle birlikte, şıklık içinde kutlamayı sabırsızlıkla bekliyoruz!",
-    "is_not_coming": "Katılımınızı onaylamadınız: " 
+    "is_not_coming": "Katılımınızı onaylamadınız: "
 }
