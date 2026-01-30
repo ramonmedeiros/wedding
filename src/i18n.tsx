@@ -18,7 +18,7 @@ i18n
     .init({
         supportedLngs: ['br', 'en', 'tr'],
         fallbackLng: "en", // use en if detected lng is not available
-        keySeparator: false, // we do not use keys in form messages.welcome
+        //keySeparator: false, // we do not use keys in form messages.welcome
         interpolation: {
             escapeValue: false // react already safes from xss
         },
