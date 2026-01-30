@@ -12,7 +12,7 @@ import { QRCodeSVG } from "qrcode.react";
 import Layout from "../components/layout/Layout";
 import Title from "../components/layout/Title";
 
-const RsvpForm = () => {
+export const RsvpForm = () => {
   const { t } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(undefined);
@@ -198,5 +198,3 @@ const RsvpForm = () => {
     </Layout>
   );
 };
-
-export default RsvpForm;

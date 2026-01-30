@@ -2,8 +2,7 @@ import Layout from "@/components/layout/Layout";
 import { useTranslation } from "react-i18next";
 
 
-
-export default function Schedule() {
+export function Schedule() {
   const { t } = useTranslation();
 
   const events = [

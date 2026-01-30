@@ -1,11 +1,6 @@
 import { Toaster, Toaster as Sonner, TooltipProvider } from "@/components/ui";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import RSVP from "./pages/RSVP";
-import Schedule from "./pages/Schedule";
-import NotFound from "./pages/NotFound";
-import FAQ from "./pages/FAQ";
-import DressCode from "./pages/DressCode";
+import { Home, Bar, RsvpForm, Schedule, DressCode, FAQ, NotFound } from "./pages";
 
 const App = () => (
   <TooltipProvider>
@@ -14,7 +9,8 @@ const App = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/rsvp" element={<RSVP />} />
+        <Route path="/bar" element={<Bar />} />
+        <Route path="/rsvp" element={<RsvpForm />} />
         <Route path="/schedule" element={<Schedule />} />
         <Route path="/dresscode" element={<DressCode />} />
         <Route path="/faq" element={<FAQ />} />

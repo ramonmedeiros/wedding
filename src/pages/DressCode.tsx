@@ -2,13 +2,13 @@ import Layout from "@/components/layout/Layout";
 import Title from "@/components/layout/Title";
 import { useTranslation } from "react-i18next";
 
-const DressCode = () => {
+export const DressCode = () => {
   const { t } = useTranslation();
 
   return (
     <Layout>
       <Title title={t("dresscode")} />
-       <div className="container mx-auto text-center fade-in-delay-1">
+      <div className="container mx-auto text-center fade-in-delay-1">
         <img
           src={"/images/dresscode.png"}
           alt={"/images/dresscode.jpg"}
@@ -21,5 +21,3 @@ const DressCode = () => {
     </Layout>
   );
 };
-
-export default DressCode;

@@ -9,7 +9,7 @@ export interface FaqItemData {
   answer: string;
 }
 
-const FAQ = () => {
+export const FAQ = () => {
   const { t } = useTranslation();
 
   const faqItems: FaqItemData[] = [
@@ -70,5 +70,3 @@ const FAQ = () => {
     </Layout>
   );
 };
-
-export default FAQ;

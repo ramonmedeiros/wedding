@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import PhotoSlider from "@/components/home/PhotoSlider";
 import { useTranslation } from "react-i18next";
 
-const Home = () => {
+export const Home = () => {
   const { t } = useTranslation();
 
   return (
@@ -49,4 +49,3 @@ const Home = () => {
   );
 };
 
-export default Home;
