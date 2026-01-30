@@ -69,6 +69,7 @@ export default {
 					darkgray: '#1D1D1F',
 					gray: '#86868B',
 					blush: '#F7CAC9',
+					deepRed: '#800000',
 				}
 			},
 			borderRadius: {
@@ -97,7 +98,11 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			},
+			fontFamily: {
+				serif: ['"Playfair Display"', "serif"],
+				script: ['"Dancing Script"', "cursive"],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
