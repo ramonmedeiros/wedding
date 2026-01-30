@@ -1,29 +1,30 @@
 export function Bar() {
   return (
     <div className="max-w-3xl mx-auto text-center font-serif text-wedding-deepRed">
-      <h1 className="text-6xl font-bold mb-8">BAR</h1>
+      <h1 className="text-8xl font-bold mb-6">BAR</h1>
 
-      <h2 className="text-xl uppercase tracking-widest border-b border-red-800 py-2 mb-8">COCKTAIL MENU</h2>
+      <h2 className="text-xl uppercase tracking-widest border-b border-red-800 py-2 mb-6">COCKTAIL MENU</h2>
 
-      <div className="mb-8 border-b border-red-800 pb-4 grid grid-cols-6">
-        <div className="text-center justify-center col-start-2 col-span-4" >
+      <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
+        <div className="text-center justify-center col-start-4 col-span-5" >
           <h3 className="text-4xl font-script mb-2">Margarita</h3>
           <h4 className="uppercase text-sm tracking-wider">TEQUILA, TRIPLE SEC, LIME, SALT</h4>
         </div>
         <Image src="/images/margarita.png" alt="Margarita" />
       </div>
 
-      <div className="mb-8 border-b border-red-800 pb-4 grid grid-cols-6">
-        <Image src="/images/aperol_sour.jpg" alt="Aperol Sour" />
-        <div className="text-center justify-center col-start-2 col-span-4">
+      <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
+        <div className="col-start-2 col-span-2">
+          <Image src="/images/aperol_sour.jpg" alt="Aperol Sour" />
+        </div>
+        <div className="text-center justify-center col-start-4 col-span-5">
           <h3 className="text-4xl font-script">Aperol Sour</h3>
           <h4 className="uppercase text-sm tracking-wider break-normal">APEROL, ORANGE JUICE, TANGERINE SYRUP AND CITRUS FOAM WITH ORANGE AND LIME LIQUEUR</h4>
         </div>
-
       </div>
 
-      <div className="mb-8 border-b border-red-800 pb-4 grid grid-cols-6">
-        <div className="text-center justify-center col-start-2 col-span-4">
+      <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
+        <div className="text-center justify-center col-start-3 col-span-7">
           <h3 className="text-4xl font-script mr-4">Caipirinha</h3>
           <ul className="uppercase text-sm tracking-wider leading-loose">
             <li><span className="font-bold">LIME:</span> LIME, CACHACA & SIMPLE SYRUP</li>
@@ -32,40 +33,41 @@ export function Bar() {
             <li><span className="font-bold">PASSION FRUIT:</span> PASSION FRUIT, CACHACA & SIMPLE SYRUP</li>
           </ul>
         </div>
-        <div className="">
-          <Image src="/images/caipirinha.png" alt="Caipirinha" />
-        </div>
-
+        <Image src="/images/caipirinha.png" alt="Caipirinha" />
       </div>
 
-      <div className="mb-8 border-b border-red-800 pb-4 grid grid-cols-6">
-        <Image src="/images/smash_pepino.png" alt="Smash Pepino" />
-        <div className="text-center justify-center col-start-2 col-span-4">
+      <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
+        <div className="col-start-2 col-span-2">
+          <Image src="/images/smash_pepino.png" alt="Smash Pepino" />
+        </div>
+        <div className="text-center justify-center col-start-4 col-span-5">
           <h3 className="text-4xl font-script">Smash Pepino</h3>
           <h4 className="uppercase text-sm tracking-wider">GIN, TONIC WATER, LEMON, LEMON SYRUP, CUCUMBER AND ICE. SERVED IN A SMOKED GLASS WITH CLOVES AND ROSEMARY.</h4>
         </div>
       </div>
 
-      <div className="mb-8 border-b border-red-800 pb-4 grid grid-cols-6">
-        <div className="text-center justify-center col-start-2 col-span-4">
+      <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
+        <div className="text-center justify-center col-start-4 col-span-5">
           <h3 className="text-4xl font-script mr-4">Fitzgerald</h3>
           <h4 className="uppercase text-sm tracking-wider">GIN, LEMON, ANGOSTURA BITTER, SIMPLE SYRUP, ORANGE AND ICE</h4>
         </div>
         <Image src="/images/fitzgerald.png" alt="Fitzgerald" />
       </div>
 
-      <div className="mb-4 border-red-800 pb-4 grid grid-cols-6">
-        <Image src="/images/cosmopolitan.png" alt="Cosmopolitan" />
-        <div className="text-center justify-center col-start-2 col-span-4">
+      <div className="mb-4 border-red-800 pb-4 grid grid-cols-11">
+        <div className="col-start-2 col-span-2">
+          <Image src="/images/cosmopolitan.png" alt="Cosmopolitan" />
+        </div>
+        <div className="text-center justify-center col-start-4 col-span-5">
           <h3 className="text-4xl font-script">Cosmopolitan</h3>
           <h4 className="uppercase text-sm tracking-wider">VODKA, ORANGE LIQUEUR, CRANBERRY JUICE, LIME, LIME ZEST</h4>
         </div>
       </div>
 
-      <h2 className="text-xl uppercase tracking-widest border-t border-b border-red-800 py-2 mb-8">MOCKTAIL MENU</h2>
+      <h2 className="text-xl uppercase tracking-widest border-t border-b border-red-800 py-2 mb-6">MOCKTAIL MENU</h2>
 
-      <div className="mb-8 grid grid-cols-6">
-        <div className="text-center justify-center items-center mb-2 col-start-2 col-span-4">
+      <div className="mb-6 grid grid-cols-11">
+        <div className="text-center justify-center col-start-3 col-span-7">
           <h3 className="text-4xl font-script">Caipirinha</h3>
           <ul className="uppercase text-sm tracking-wider leading-loose">
             <li><span className="font-bold">LIME:</span> LIME, SIMPLE SYRUP & MINERAL WATER</li>
