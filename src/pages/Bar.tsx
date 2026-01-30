@@ -1,14 +1,17 @@
+import { useTranslation } from 'react-i18next';
+
 export function Bar() {
+  const { t } = useTranslation();
   return (
     <div className="max-w-3xl mx-auto text-center font-serif text-wedding-deepRed">
-      <h1 className="text-8xl mb-6">BAR</h1>
+      <h1 className="text-8xl mb-6">{t('bar.title')}</h1>
 
-      <h2 className="text-xl uppercase tracking-widest border-b border-red-800 py-2 mb-6">COCKTAIL MENU</h2>
+      <h2 className="text-xl uppercase tracking-widest border-b border-red-800 py-2 mb-6">{t('bar.cocktail_menu')}</h2>
 
       <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
         <div className="text-center justify-center col-start-4 col-span-5" >
-          <h3 className="text-4xl font-script mb-2">Margarita</h3>
-          <h4 className="uppercase text-sm tracking-wider">TEQUILA, TRIPLE SEC, LIME, SALT</h4>
+          <h3 className="text-4xl font-script mb-2">{t('bar.margarita.title')}</h3>
+          <h4 className="uppercase text-sm tracking-wider">{t('bar.margarita.ingredients')}</h4>
         </div>
         <Image src="/images/margarita.png" alt="Margarita" />
       </div>
@@ -18,19 +21,19 @@ export function Bar() {
           <Image src="/images/aperol_sour.jpg" alt="Aperol Sour" />
         </div>
         <div className="text-center justify-center col-start-4 col-span-5">
-          <h3 className="text-4xl font-script">Aperol Sour</h3>
-          <h4 className="uppercase text-sm tracking-wider break-normal">APEROL, ORANGE JUICE, TANGERINE SYRUP AND CITRUS FOAM WITH ORANGE AND LIME LIQUEUR</h4>
+          <h3 className="text-4xl font-script">{t('bar.aperol_sour.title')}</h3>
+          <h4 className="uppercase text-sm tracking-wider break-normal">{t('bar.aperol_sour.ingredients')}</h4>
         </div>
       </div>
 
       <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
         <div className="text-center justify-center col-start-3 col-span-7">
-          <h3 className="text-4xl font-script mr-4">Caipirinha</h3>
+          <h3 className="text-4xl font-script mr-4">{t('bar.caipirinha.title')}</h3>
           <ul className="uppercase text-sm tracking-wider leading-loose">
-            <li><span className="font-bold">LIME:</span> LIME, CACHACA & SIMPLE SYRUP</li>
-            <li><span className="font-bold">STRAWBERRY:</span> STRAWBERRY, SAKE & SIMPLE SYRUP</li>
-            <li><span className="font-bold">PINEAPPLE:</span> PINEAPPLE, CACHACA & SIMPLE SYRUP</li>
-            <li><span className="font-bold">PASSION FRUIT:</span> PASSION FRUIT, CACHACA & SIMPLE SYRUP</li>
+            <li><span className="font-bold">{t('bar.caipirinha.lime')}</span>{t('bar.caipirinha.lime_ingredients')}</li>
+            <li><span className="font-bold">{t('bar.caipirinha.strawberry')}</span>{t('bar.caipirinha.strawberry_ingredients')}</li>
+            <li><span className="font-bold">{t('bar.caipirinha.pineapple')}</span>{t('bar.caipirinha.pineapple_ingredients')}</li>
+            <li><span className="font-bold">{t('bar.caipirinha.passion_fruit')}</span>{t('bar.caipirinha.passion_fruit_ingredients')}</li>
           </ul>
         </div>
         <Image src="/images/caipirinha.png" alt="Caipirinha" />
@@ -41,15 +44,15 @@ export function Bar() {
           <Image src="/images/smash_pepino.png" alt="Smash Pepino" />
         </div>
         <div className="text-center justify-center col-start-4 col-span-5">
-          <h3 className="text-4xl font-script">Smash Pepino</h3>
-          <h4 className="uppercase text-sm tracking-wider">GIN, TONIC WATER, LEMON, LEMON SYRUP, CUCUMBER AND ICE. SERVED IN A SMOKED GLASS WITH CLOVES AND ROSEMARY.</h4>
+          <h3 className="text-4xl font-script">{t('bar.smash_pepino.title')}</h3>
+          <h4 className="uppercase text-sm tracking-wider">{t('bar.smash_pepino.ingredients')}</h4>
         </div>
       </div>
 
       <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
         <div className="text-center justify-center col-start-4 col-span-5">
-          <h3 className="text-4xl font-script mr-4">Fitzgerald</h3>
-          <h4 className="uppercase text-sm tracking-wider">GIN, LEMON, ANGOSTURA BITTER, SIMPLE SYRUP, ORANGE AND ICE</h4>
+          <h3 className="text-4xl font-script mr-4">{t('bar.fitzgerald.title')}</h3>
+          <h4 className="uppercase text-sm tracking-wider">{t('bar.fitzgerald.ingredients')}</h4>
         </div>
         <Image src="/images/fitzgerald.png" alt="Fitzgerald" />
       </div>
@@ -59,21 +62,21 @@ export function Bar() {
           <Image src="/images/cosmopolitan.png" alt="Cosmopolitan" />
         </div>
         <div className="text-center justify-center col-start-4 col-span-5">
-          <h3 className="text-4xl font-script">Cosmopolitan</h3>
-          <h4 className="uppercase text-sm tracking-wider">VODKA, ORANGE LIQUEUR, CRANBERRY JUICE, LIME, LIME ZEST</h4>
+          <h3 className="text-4xl font-script">{t('bar.cosmopolitan.title')}</h3>
+          <h4 className="uppercase text-sm tracking-wider">{t('bar.cosmopolitan.ingredients')}</h4>
         </div>
       </div>
 
-      <h2 className="text-xl uppercase tracking-widest border-t border-b border-red-800 py-2 mb-6">MOCKTAIL MENU</h2>
+      <h2 className="text-xl uppercase tracking-widest border-t border-b border-red-800 py-2 mb-6">{t('bar.mocktail_menu')}</h2>
 
       <div className="mb-6 grid grid-cols-11">
         <div className="text-center justify-center col-start-3 col-span-7">
-          <h3 className="text-4xl font-script">Caipirinha</h3>
+          <h3 className="text-4xl font-script">{t('bar.caipirinha.title')}</h3>
           <ul className="uppercase text-sm tracking-wider leading-loose">
-            <li><span className="font-bold">LIME:</span> LIME, SIMPLE SYRUP & MINERAL WATER</li>
-            <li><span className="font-bold">STRAWBERRY:</span> STRAWBERRY, SIMPLE SYRUP & MINERAL WATER</li>
-            <li><span className="font-bold">PINEAPPLE:</span> PINEAPPLE, SIMPLE SYRUP & MINERAL WATER</li>
-            <li><span className="font-bold">PASSION FRUIT:</span> PASSION FRUIT, SIMPLE SYRUP & MINERAL WATER</li>
+            <li><span className="font-bold">{t('bar.mocktail.lime')}:</span> {t('bar.mocktail.lime')}, {t('bar.mocktail.suffix')}</li>
+            <li><span className="font-bold">{t('bar.mocktail.strawberry')}:</span> {t('bar.mocktail.strawberry')}, {t('bar.mocktail.suffix')}</li>
+            <li><span className="font-bold">{t('bar.mocktail.pineapple')}:</span> {t('bar.mocktail.pineapple')}, {t('bar.mocktail.suffix')}</li>
+            <li><span className="font-bold">{t('bar.mocktail.passion_fruit')}:</span> {t('bar.mocktail.passion_fruit')}, {t('bar.mocktail.suffix')}</li>
           </ul>
         </div>
         <Image src="/images/caipirinha.png" alt="Caipirinha" />

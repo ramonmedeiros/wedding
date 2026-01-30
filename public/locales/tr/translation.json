@@ -72,5 +72,48 @@
     "location_stay": "Kalınacak yer:",
     "dresscode": "Kıyafet Kodu",
     "dresscode_description": "Haydi Şıklanalım!\n\nDüğünümüzde smart formal kıyafet kuralı olacak. Yani zarif ve özenli bir görünüm: kokteyl tarzından daha şık, fakat smokin kadar katı değil. En iyi takımlarınızı, abiyelerinizi, kokteyl elbiselerinizi, şık ayakkabılarınızı ve biraz da ışıltınızı getirin. ✨\n\nKutlama çoğunlukla kapalı alanda, biraz da açık alanda gerçekleşecek. Şubat ayı Brezilya’da sıcak geçer, bu yüzden hafif ve nefes alabilen kumaşları tercih edin.\n\nRenk konusunda özgürsünüz! Tüm renklere izin var, siyah da dahil (sonuçta bu biraz da bekârlık hayatımızın cenazesi sayılır 😄).\n\nKüçük bir ricamız var: lütfen beyaz ve bej tonlarından kaçının. Bu renkleri sevmediğimizden değil, ama gelin bu tonlarda parlayan tek kişi olmak istiyor. Onun parıltılı anıyla rekabet etmeyelim, olur mu?\n\nEkstra rahatlık için, partiye sandalet ya da terlik getirmeyi unutmayın! 💃🕺\n\nSizinle birlikte, şıklık içinde kutlamayı sabırsızlıkla bekliyoruz!",
-    "is_not_coming": "Katılımınızı onaylamadınız: "
+    "is_not_coming": "Katılımınızı onaylamadınız: ",
+    "bar": {
+        "title": "BAR",
+        "cocktail_menu": "KOKTEYL MENÜSÜ",
+        "margarita": {
+            "title": "Margarita",
+            "ingredients": "TEKİLA, PORTAKAL LİKÖRÜ, LİME, TUZ"
+        },
+        "aperol_sour": {
+            "title": "Aperol Sour",
+            "ingredients": "APEROL, PORTAKAL SUYU, MANDALİNA ŞURUBU VE PORTAKAL VE LİME LİKÖRLÜ NARENCİYE KÖPÜĞÜ"
+        },
+        "caipirinha": {
+            "title": "Caipirinha",
+            "lime": "LİME: ",
+            "lime_ingredients": "LİME, CACHACA & ŞEKER ŞURUBU",
+            "strawberry": "ÇİLEK: ",
+            "strawberry_ingredients": "ÇİLEK, SAKE & ŞEKER ŞURUBU",
+            "pineapple": "ANANAS: ",
+            "pineapple_ingredients": "ANANAS, CACHACA & ŞEKER ŞURUBU",
+            "passion_fruit": "ÇARKIFELEK MEYVESİ: ",
+            "passion_fruit_ingredients": "ÇARKIFELEK MEYVESİ, CACHACA & ŞEKER ŞURUBU"
+        },
+        "smash_pepino": {
+            "title": "Smash Pepino",
+            "ingredients": "CİN, TONİK, LİMON, LİMON ŞURUBU, SALATALIK VE BUZ. TÜTSÜLENMİŞ BARDAKTA KARANFİL VE BİBERİYE İLE SERVİS EDİLİR."
+        },
+        "fitzgerald": {
+            "title": "Fitzgerald",
+            "ingredients": "CİN, LİMON, ANGOSTURA BITTER, ŞEKER ŞURUBU, PORTAKAL VE BUZ"
+        },
+        "cosmopolitan": {
+            "title": "Cosmopolitan",
+            "ingredients": "VODKA, PORTAKAL LİKÖRÜ, KIZILCIK SUYU, LİME, LİME KABUĞU"
+        },
+        "mocktail_menu": "ALKOLSÜZ KOKTEYL MENÜSÜ",
+        "mocktail": {
+            "lime": "LİME",
+            "strawberry": "ÇİLEK",
+            "pineapple": "ANANAS",
+            "passion_fruit": "ÇARKIFELEK MEYVESİ",
+            "suffix": "ŞEKER ŞURUBU VE MADEN SUYU"
+        }
+    }
 }

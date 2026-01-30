@@ -69,6 +69,48 @@
     "access_code": "Seu Código de Acesso",
     "dresscode": "Código de vestimenta",
     "dresscode_description": "Vamos Caprichar!\n\nNosso casamento terá um código de vestimenta sport fino. Ternos, vestidos longos e sapatos. ✨\n\nA celebração será principalmente em ambientes internos, com um pouco de espaço ao ar livre. Como será fevereiro no Brasil, pense em clima quente e tecidos leves e respiráveis.\n\nQuanto às cores, fique à vontade para ser criativo! Todas as cores são bem-vindas, inclusive o preto (afinal, é tecnicamente o funeral das nossas vidas de solteiros 😄). Vamos deixar o branco para a noiva.\n\nE para um conforto extra mais tarde, traga suas havaianas para a festa! 💃🕺\n\nEstamos ansiosos para celebrar com você, em grande estilo!",
-    "is_coming": "Você confirmou sua presença para: ",
-    "is_not_coming": "Você não confirmou sua presença para: "
+    "is_not_coming": "Você não confirmou sua presença para: ",
+    "bar": {
+        "title": "BAR",
+        "cocktail_menu": "MENU DE DRINKS",
+        "margarita": {
+            "title": "Margarita",
+            "ingredients": "TEQUILA, LICOR DE LARANJA, LIMÃO, SAL"
+        },
+        "aperol_sour": {
+            "title": "Aperol Sour",
+            "ingredients": "APEROL, SUCO DE LARANJA, XAROPE DE TANGERINA E ESPUMA CÍTRICA COM LICOR DE LARANJA E LIMÃO"
+        },
+        "caipirinha": {
+            "title": "Caipirinha",
+            "lime": "LIMÃO: ",
+            "lime_ingredients": "LIMÃO, CACHAÇA E XAROPE DE AÇÚCAR",
+            "strawberry": "MORANGO: ",
+            "strawberry_ingredients": "MORANGO, SAQUÊ E XAROPE DE AÇÚCAR",
+            "pineapple": "ABACAXI: ",
+            "pineapple_ingredients": "ABACAXI, CACHAÇA E XAROPE DE AÇÚCAR",
+            "passion_fruit": "MARACUJÁ: ",
+            "passion_fruit_ingredients": "MARACUJÁ, CACHAÇA E XAROPE DE AÇÚCAR"
+        },
+        "smash_pepino": {
+            "title": "Smash Pepino",
+            "ingredients": "GIN, ÁGUA TÔNICA, LIMÃO, XAROPE DE LIMÃO, PEPINO E GELO. SERVIDO EM COPO DEFUMADO COM CRAVO E ALECRIM."
+        },
+        "fitzgerald": {
+            "title": "Fitzgerald",
+            "ingredients": "GIN, LIMÃO, ANGOSTURA, XAROPE DE AÇÚCAR, LARANJA E GELO"
+        },
+        "cosmopolitan": {
+            "title": "Cosmopolitan",
+            "ingredients": "VODKA, LICOR DE LARANJA, SUCO DE CRANBERRY, LIMÃO, RASPAS DE LIMÃO"
+        },
+        "mocktail_menu": "MENU SEM ÁLCOOL",
+        "mocktail": {
+            "lime": "LIMÃO",
+            "strawberry": "MORANGO",
+            "pineapple": "ABACAXI",
+            "passion_fruit": "MARACUJÁ",
+            "suffix": "XAROPE DE AÇÚCAR E ÁGUA COM GÁS"
+        }
+    }
 }
