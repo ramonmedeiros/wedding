@@ -69,7 +69,7 @@ export default {
 					darkgray: '#1D1D1F',
 					gray: '#86868B',
 					blush: '#F7CAC9',
-					deepRed: '#800000',
+					deepRed: '#900000',
 				}
 			},
 			borderRadius: {

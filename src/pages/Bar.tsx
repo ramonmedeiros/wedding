@@ -1,7 +1,7 @@
 export function Bar() {
   return (
     <div className="max-w-3xl mx-auto text-center font-serif text-wedding-deepRed">
-      <h1 className="text-8xl font-bold mb-6">BAR</h1>
+      <h1 className="text-8xl mb-6">BAR</h1>
 
       <h2 className="text-xl uppercase tracking-widest border-b border-red-800 py-2 mb-6">COCKTAIL MENU</h2>
 
