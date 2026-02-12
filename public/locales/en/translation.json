@@ -119,7 +119,10 @@
         "title": "Gift",
         "description": "If you would like to give us a gift, we would be very happy with a contribution via Pix!",
         "instructions": "Scan the QR code below or copy the Pix key to make your transfer. Any amount is very welcome and will mean a lot to us! 💝",
-        "pix_key": "Pix Key (CPF)",
+        "pix_key": "Pix Key",
+        "pix_key_qr": "Pix QR Code",
+        "pix_key_cpf": "Pix Key (CPF)",
+        "pix_key_email": "Pix Key (Email)",
         "copy_button": "Copy Pix Key",
         "copied": "Pix key copied!",
         "copy_error": "Failed to copy"

@@ -74,7 +74,10 @@
         "title": "Presente",
         "description": "Se você gostaria de nos presentear, ficaríamos muito felizes com uma contribuição via Pix!",
         "instructions": "Escaneie o QR code abaixo ou copie a chave Pix para fazer sua transferência. Qualquer valor é muito bem-vindo e significará muito para nós! 💝",
-        "pix_key": "Chave Pix (CPF)",
+        "pix_key": "Chave Pix",
+        "pix_key_qr": "Chave Pix (QR Code)",
+        "pix_key_cpf": "Chave Pix (CPF)",
+        "pix_key_email": "Chave Pix (Email)",
         "copy_button": "Copiar Chave Pix",
         "copied": "Chave Pix copiada!",
         "copy_error": "Erro ao copiar"

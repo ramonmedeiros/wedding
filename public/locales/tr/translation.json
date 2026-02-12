@@ -120,7 +120,10 @@
         "title": "Hediye",
         "description": "Eğer bize hediye vermek isterseniz, Pix ile yapacağınız bir katkı bizi çok mutlu eder!",
         "instructions": "Aşağıdaki QR kodu tarayın veya transferinizi yapmak için Pix anahtarını kopyalayın. Herhangi bir tutar çok hoş karşılanır ve bizim için çok anlamlı olacaktır! 💝",
-        "pix_key": "Pix Anahtarı (CPF)",
+        "pix_key": "Pix Anahtarı",
+        "pix_key_qr": "Pix Anahtarı (QR Kod)",
+        "pix_key_cpf": "Pix Anahtarı (CPF)",
+        "pix_key_email": "Pix Anahtarı (Email)",
         "copy_button": "Pix Anahtarını Kopyala",
         "copied": "Pix anahtarı kopyalandı!",
         "copy_error": "Kopyalama hatası"
