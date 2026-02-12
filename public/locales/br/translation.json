@@ -70,6 +70,15 @@
     "dresscode": "Código de vestimenta",
     "dresscode_description": "Vamos Caprichar!\n\nNosso casamento terá um código de vestimenta sport fino. Ternos, vestidos longos e sapatos. ✨\n\nA celebração será principalmente em ambientes internos, com um pouco de espaço ao ar livre. Como será fevereiro no Brasil, pense em clima quente e tecidos leves e respiráveis.\n\nQuanto às cores, fique à vontade para ser criativo! Todas as cores são bem-vindas, inclusive o preto (afinal, é tecnicamente o funeral das nossas vidas de solteiros 😄). Vamos deixar o branco para a noiva.\n\nE para um conforto extra mais tarde, traga suas havaianas para a festa! 💃🕺\n\nEstamos ansiosos para celebrar com você, em grande estilo!",
     "is_not_coming": "Você não confirmou sua presença para: ",
+    "presente": {
+        "title": "Presente",
+        "description": "Se você gostaria de nos presentear, ficaríamos muito felizes com uma contribuição via Pix!",
+        "instructions": "Escaneie o QR code abaixo ou copie a chave Pix para fazer sua transferência. Qualquer valor é muito bem-vindo e significará muito para nós! 💝",
+        "pix_key": "Chave Pix (CPF)",
+        "copy_button": "Copiar Chave Pix",
+        "copied": "Chave Pix copiada!",
+        "copy_error": "Erro ao copiar"
+    },
     "bar": {
         "title": "BAR",
         "cocktail_menu": "MENU DE DRINKS",
