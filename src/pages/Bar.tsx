@@ -41,11 +41,11 @@ export function Bar() {
 
       <div className="mb-6 border-b border-red-800 pb-4 grid grid-cols-11">
         <div className="col-start-2 col-span-2">
-          <Image src="/images/smash_pepino.png" alt="Smash Pepino" />
+          <Image src="/images/strawberry_gin.png" alt="Strawberry Gin" />
         </div>
         <div className="text-center justify-center col-start-4 col-span-5">
-          <h3 className="text-4xl font-script">{t('bar.smash_pepino.title')}</h3>
-          <h4 className="uppercase text-sm tracking-wider">{t('bar.smash_pepino.ingredients')}</h4>
+          <h3 className="text-4xl font-script">{t('bar.strawberry_gin.title')}</h3>
+          <h4 className="uppercase text-sm tracking-wider">{t('bar.strawberry_gin.ingredients')}</h4>
         </div>
       </div>
 
